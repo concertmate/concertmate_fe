@@ -1,10 +1,16 @@
 import React from 'react'
+import SingleFriend from '../SingleFriendCard/SingleFriendCard'
+import './FriendsList.css'
+import { Link } from 'react-router-dom'
 
 type Props = {}
 
 const FriendsList = (props: Props) => {
   return (
-    <div>FriendsList</div>
+    <div className='friends-list'>
+      <h2>Friends List </h2>
+      <Link to='/singleFriend/:friendId'><SingleFriend /></Link>
+    </div>
   )
 }
 

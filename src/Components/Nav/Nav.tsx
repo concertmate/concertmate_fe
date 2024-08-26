@@ -13,7 +13,7 @@ const Nav = (props: Props) => {
             <Link to='/events'>
                 <li>Events</li>
             </Link>
-            <Link to='/friends'>
+            <Link to='/friendslist'>
                 <li>Friends</li>
             </Link>
         </ul>

@@ -1,0 +1,9 @@
+.my-event-widget {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    background-color: rgb(251, 251, 155);
+}
