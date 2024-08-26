@@ -1,9 +1,10 @@
-.landing-page {
+.friends-list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-
+    width: 50%;
+    height: 50%;
+    background: rgb(92, 92, 242);
+    margin: 5rem;
 }
