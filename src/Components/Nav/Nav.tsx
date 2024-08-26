@@ -7,13 +7,13 @@ const Nav = (props: Props) => {
   return (
     <nav>
         <ul>
-            <Link to='/'>
+            <Link to='/' className='nav-link'>
                 <li>ConcertMate</li>
             </Link>
-            <Link to='/events'>
+            <Link to='/events' className='nav-link'>
                 <li>Events</li>
             </Link>
-            <Link to='/friendslist'>
+            <Link to='/friendslist' className='nav-link'>
                 <li>Friends</li>
             </Link>
         </ul>

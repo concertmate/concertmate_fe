@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import './App.css'
 import Header from './Components/Header/Header.jsx'
 import LandingPage from './Components/LandingPage/LandingPage.js'
 import MyEvents from './Components/MyEvents/MyEvents.js'
