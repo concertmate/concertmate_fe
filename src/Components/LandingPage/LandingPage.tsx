@@ -1,16 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import './LandingPage.css'
 import MyEvents from '../MyEvents/MyEvents'
 import FriendsList from '../FriendsList/FriendsList'
+import LoginPage from '../LoginPage/LoginPage'
+import AppContext from  '../../Context/AppContext.tsx'
 
-type Props = {}
 
-const LandingPage = (props: Props) => {
+const LandingPage = ({handleAuthentication: Function}) => {
+  const {authenticated} = useContext(AppContext)
   return (
-    <div className='landing-page'>
+    <>
+    {authenticated? (<div className='landing-page'>
         <MyEvents />
         <FriendsList />
-    </div>
+    </div>) : (<LoginPage/>)}
+    </>
   )
 }
 

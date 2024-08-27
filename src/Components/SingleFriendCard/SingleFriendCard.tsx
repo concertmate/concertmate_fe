@@ -4,7 +4,7 @@ type Props = {}
 
 const SingleFriendCard = (props: Props) => {
   return (
-    <div className='songle-friend-card'>Single Friend Card</div>
+    <div className='single-friend-card'>Single Friend Card</div>
   )
 }
 
