@@ -3,17 +3,30 @@ nav {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
+    position: fixed;
 }
 
-ul {
+.nav-link-wrapper {
     display: flex;
     list-style-type: none;
-    justify-content: space-around;
+    justify-content: space-between;
+    border: rebeccapurple 2px solid;
+}
+
+.logo {
+    height: 5em;
+    width: 5rem;
+    margin-left: 1rem;
+    padding: 0;
 }
 
 .nav-link {
-    width: 3rem;
-    height: 6rem;
+    text-align: center;
+    width: 6rem;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: .4rem;
+    margin: 1rem;
     border: 5%;
     background-color: #b6d0e2;
 

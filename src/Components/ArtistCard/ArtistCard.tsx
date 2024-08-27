@@ -4,7 +4,7 @@ type Props = {}
 
 const ArtistCard = (props: Props) => {
   return (
-    <div>ArtistCard</div>
+    <div className='artist-card-wrapper'>ArtistCard</div>
   )
 }
 

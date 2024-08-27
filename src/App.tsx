@@ -7,7 +7,7 @@ import CreateEvent from './Components/CreateEvent/CreateEvent.js'
 import FriendsList from './Components/FriendsList/FriendsList.js'
 import AllEventsPage from './Components/AllEventsPage/AllEventsPage.js'
 import EventPage from './Components/EventPage/EventPage.js'
-import SingleFriendCard from './Components/SingleFriendCard/SingleFriendCard.js'
+import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
 
 
@@ -21,8 +21,8 @@ const App = () => {
         <Route path='/myevents' element={<MyEvents />}/>
         <Route path='/friendslist' element={<FriendsList/>}/>
         <Route path='/allEventsPage' element={<AllEventsPage />}/>
-        <Route path='/eventPage' element= {<EventPage />} />
-        <Route path='/singleFriend/:id' element={<SingleFriendCard />} />
+        <Route path='/eventPage/:eventId' element={<EventPage />} />
+        <Route path='/singleFriend/:id' element={<SingleFriendPage />} />
         <Route path='/artistPage/:id' element={<ArtistPage />} />
     </Routes>
     </>
