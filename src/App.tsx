@@ -26,7 +26,6 @@ const App = () => {
         <Route path='/artistPage/:id' element={<ArtistPage />} />
     </Routes>
     </>
-   
   )
 }
 
