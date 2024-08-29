@@ -7,7 +7,7 @@ import './ArtistCard.css'
 import { NavLink } from 'react-router-dom'
 type Props = {}
 
-const ArtistCard = (props: Props) => {
+const ArtistCard = (props: Props) => { //id
   const artistCards = data2.map(({external_urls,followers,genres,href,id,images,name,popularity,type,uri}) => {
 
     return (
@@ -20,9 +20,9 @@ const ArtistCard = (props: Props) => {
       </>
     )
   })
-  return (
-    {artistCards}
-  )
+  // return (
+  //   {artistCards}
+  // )
 }
 
 export default ArtistCard

@@ -16,7 +16,7 @@ const AuthContext =React.createContext<boolean>(false);
 
 const App = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
-
+  
   function handleAuthentication(isAuthenticated: boolean) {
       setAuthenticated(isAuthenticated)
   }

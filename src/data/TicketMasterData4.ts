@@ -1,4 +1,4 @@
-export const tmData4 =   [
+export const tmData4 = [[
     {
         "@context": "http://schema.org",
         "@type": "MusicEvent",
@@ -212,4 +212,4 @@ export const tmData4 =   [
                 "sameAs": "https://www.ticketmaster.com/monaleo-tickets/artist/2814803"
             }
         ]
-    }]
+}],[]]

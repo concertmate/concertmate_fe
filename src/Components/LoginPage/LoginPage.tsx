@@ -19,7 +19,7 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication }) => {
 
   const handleFormSubmit = () => {
     const foundUser = user.find((u) => u.email === email);
-  
+    console.log(foundUser)
     if (foundUser) {
       navigate('/landing');
       handleAuthentication(true);

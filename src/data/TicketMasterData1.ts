@@ -1,4 +1,4 @@
-export const tmData1 =     [
+export const tmData1 = [[
     {
         "@context": "http://schema.org",
         "@type": "MusicEvent",
@@ -134,4 +134,4 @@ export const tmData1 =     [
             }
         ]
     }
-]
+],[]]

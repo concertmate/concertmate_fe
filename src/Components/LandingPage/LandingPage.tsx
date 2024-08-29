@@ -3,10 +3,6 @@ import './LandingPage.css'
 import MyEvents from '../MyEvents/MyEvents'
 import FriendsList from '../FriendsList/FriendsList'
 
-
-
-
-
 const LandingPage: React.FC = ({}) => {
 
   return (
