@@ -25,10 +25,10 @@ const App = () => {
     <AuthContext.Provider value={authenticated}>
     <Header/>
     <Routes>
-        <Route path="/" element={<LoginPage />} /> 
+        <Route path="/" element={<LoginPage handleAuthentication={handleAuthentication}/>} /> 
           <Route
             path="/landing"
-            element={<LandingPage handleAuthentication={handleAuthentication} />} 
+            element={<LandingPage  />} 
           />
         <Route path='/createEvent' element={<CreateEvent />}/>
         <Route path='/myevents' element={<MyEvents />}/>

@@ -4,13 +4,15 @@ import './LoginPage.css'
 import { user } from '../../data/userData.ts'
 
 
+interface LoginPageProps {
+  handleAuthentication: (isAuthenticated: boolean) => void;
+}
 
-const LoginPage = () => {
+const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication }) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
-  const navigate = useNavigate()
-
+  const navigate = useNavigate()  
   const handleLoginClick = () => {
     setIsLoggingIn(true)
   }
@@ -20,6 +22,7 @@ const LoginPage = () => {
   
     if (foundUser) {
       navigate('/landing');
+      handleAuthentication(true);
     } else {
       setError('Could not find user');
 
