@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import './Nav.css'
-import logo from '../../assets/cblogo.png'
+import logo from '../../assets/cblogo1.png'
 
 type Props = {}
 
