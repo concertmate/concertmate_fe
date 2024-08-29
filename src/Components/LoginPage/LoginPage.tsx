@@ -16,15 +16,21 @@ const LoginPage = () => {
   }
 
   const handleFormSubmit = () => {
-    for (var i = 0; i < user.length; i++){
-      if (email === user[i].email) {
-        navigate('/landing');
-      } else {
-        setError('Could not find user');
-        return;
-      }
+    const foundUser = user.find((u) => u.email === email);
+  
+    if (foundUser) {
+      navigate('/landing');
+    } else {
+      setError('Could not find user');
+
+      const errorTimeout = setTimeout(() => {
+        setError('');
+      }, 3000);
+      
+      return () => clearTimeout(errorTimeout);
     }
-  }
+  };
+  
 
 
   return (

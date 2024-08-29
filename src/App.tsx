@@ -10,7 +10,6 @@ import AllEventsPage from './Components/AllEventsPage/AllEventsPage.js'
 import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendCard from './Components/SingleFriendCard/SingleFriendCard.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
-import AppContext from './Context/AppContext.js'
 import React, { useState } from 'react'
 
 const AuthContext =React.createContext<boolean>(false);
@@ -26,7 +25,11 @@ const App = () => {
     <AuthContext.Provider value={authenticated}>
     <Header/>
     <Routes>
-        <Route path='/' element={<LandingPage handleAuthentication={handleAuthentication}/>}/> 
+        <Route path="/" element={<LoginPage />} /> 
+          <Route
+            path="/landing"
+            element={<LandingPage handleAuthentication={handleAuthentication} />} 
+          />
         <Route path='/createEvent' element={<CreateEvent />}/>
         <Route path='/myevents' element={<MyEvents />}/>
         <Route path='/friendslist' element={<FriendsList/>}/>

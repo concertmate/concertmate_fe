@@ -2,20 +2,27 @@ import React, {useContext} from 'react'
 import './LandingPage.css'
 import MyEvents from '../MyEvents/MyEvents'
 import FriendsList from '../FriendsList/FriendsList'
-import LoginPage from '../LoginPage/LoginPage'
 import AppContext from  '../../Context/AppContext.tsx'
 
 
-const LandingPage = ({handleAuthentication: Function}) => {
-  const {authenticated} = useContext(AppContext)
-  return (
-    <>
-    {authenticated? (<div className='landing-page'>
-        <MyEvents />
-        <FriendsList />
-    </div>) : (<LoginPage/>)}
-    </>
-  )
+interface LandingPageProps {
+  handleAuthentication: (isAuthenticated: boolean) => void;
 }
 
-export default LandingPage
+const LandingPage: React.FC<LandingPageProps> = ({ handleAuthentication }) => {
+  const authenticated = useContext(AppContext);
+
+  if (!authenticated) {
+    handleAuthentication(false);
+    return null;
+  }
+
+  return (
+    <div className="landing-page">
+      <MyEvents />
+      <FriendsList />
+    </div>
+  );
+};
+
+export default LandingPage;
