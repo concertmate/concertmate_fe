@@ -9,7 +9,7 @@ const FriendsList = (props: Props) => {
   return (
     <div className='friends-list'>
       <h2>Friends List </h2>
-      <Link to='/singleFriend/:friendId'><SingleFriend /></Link>
+      <SingleFriend />
     </div>
   )
 }

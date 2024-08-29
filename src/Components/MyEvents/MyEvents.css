@@ -4,6 +4,29 @@
     flex-direction: column;
     align-items: center;
     height: 80%;
-    width: 80%;
+    width: 50rem;
+    margin: 1.25rem;
     background-color: rgb(251, 251, 155);
+}
+
+.event-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: auto;
+    margin-bottom: 2rem;
+    width: 98%;
+    background-color: rgb(255, 255, 255);
+}
+
+.bttn-box {
+    display: flex;
+    gap: 2rem;
+}
+
+.bttn-box a {
+    text-decoration: none;
+    color: black;
 }

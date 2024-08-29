@@ -8,7 +8,7 @@ const TopArtist = (props: Props) => {
   return (
     <div className='top-artist'>
         <h2>Top Artist</h2>
-        <Link to='/artistPage'><ArtistCard /></Link> 
+        <Link to='/artistPage/:id'><ArtistCard /></Link> 
     </div>
   )
 }

@@ -1,10 +1,11 @@
 import React from 'react'
+import './AllEventsPage.css'
 
 type Props = {}
 
 const AllEventsPage = (props: Props) => {
   return (
-    <div>AllEventsPage</div>
+    <div className='all-events-page'>AllEventsPage</div>
   )
 }
 
