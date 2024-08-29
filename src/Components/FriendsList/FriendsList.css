@@ -4,7 +4,6 @@
     align-items: center;
     flex-direction: column;
     width: 50%;
-    height: 50%;
-    background: rgb(92, 92, 242);
-    margin: 5rem;
+    background-color: rgb(145, 145, 255);
+    height: 40rem;
 }

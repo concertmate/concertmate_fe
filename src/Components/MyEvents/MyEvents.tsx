@@ -7,10 +7,19 @@ type Props = {}
 const MyEvents = ({events}: Props) => {
   return (
     <div className='my-event-widget'>
-      {/* {events? <h3>You have no upcoming shows...</h3> : } */}
-        <Link to='/eventPage/:eventId'><EventCard /></Link>
-        <Link to='/createEvent'> Create Event</Link>
-        <Link to='/allEventsPage'> My Events</Link>
+      <h2>My Events</h2>
+      <div className='event-wrapper'>
+        {/* {events? <h3>You have no upcoming shows...</h3> : } */}
+        <EventCard />
+        <EventCard />
+
+        <div className='bttn-box'>
+          <Link to='/createEvent'> <p>Create Event</p></Link>
+          <Link to='/allEventsPage'> <p>My Event's</p></Link>
+        </div>
+        
+      </div>
+      
     </div>
   )
 }

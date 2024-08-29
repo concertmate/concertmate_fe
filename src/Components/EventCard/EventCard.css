@@ -1,0 +1,11 @@
+.event-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 5rem;
+    margin: 0.21rem;
+    background-color: rgb(251, 251, 155);
+    padding-top: 6rem;
+
+}
