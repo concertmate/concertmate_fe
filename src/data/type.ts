@@ -15,3 +15,8 @@ export interface UserAuthentication {
     setAuthentication: (authenticated: boolean) => void;
 }
 
+export interface User {
+    id: number;
+    email: string;
+    friends: number[];
+  }

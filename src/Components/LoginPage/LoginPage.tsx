@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'
 import { user } from '../../data/userData.ts'
 
-
+interface User {
+  id: number;
+  email: string;
+  friends: number[]
+}
 interface LoginPageProps {
   handleAuthentication: (isAuthenticated: boolean) => void;
+  changeUser: (user: User) => void;
 }
 
-const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication }) => {
+const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser}) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
@@ -19,8 +24,8 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication }) => {
 
   const handleFormSubmit = () => {
     const foundUser = user.find((u) => u.email === email);
-    console.log(foundUser)
     if (foundUser) {
+      changeUser(foundUser)
       navigate('/landing');
       handleAuthentication(true);
     } else {

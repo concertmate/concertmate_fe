@@ -11,26 +11,29 @@ import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
 import React, { useState } from 'react'
-
+import {User} from './data/type.js'
 const AuthContext =React.createContext<boolean>(false);
 
 const App = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
-  
+  const [user, setUser] = useState<User>({id: 1,email:'',friends:[2,3,4]})
   function handleAuthentication(isAuthenticated: boolean) {
       setAuthenticated(isAuthenticated)
+  }
+  function changeUser(foundUser: User) {
+    setUser(foundUser)
   }
   return (
     <>
     <AuthContext.Provider value={authenticated}>
     <Header/>
     <Routes>
-        <Route path="/" element={<LoginPage handleAuthentication={handleAuthentication}/>} /> 
+        <Route path="/" element={<LoginPage changeUser={changeUser} handleAuthentication={handleAuthentication}/>} /> 
           <Route
             path="/landing"
             element={<LandingPage  />} 
           />
-        <Route path='/createEvent' element={<CreateEvent />}/>
+        <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
         <Route path='/myevents' element={<MyEvents />}/>
         <Route path='/friendslist' element={<FriendsList/>}/>
         <Route path='/allEventsPage' element={<AllEventsPage />}/>

@@ -1,10 +1,15 @@
 import React from 'react'
 import TopArtist from '../TopArtist/TopArtist'
 import './CreateEvent.css'
+import {User} from '../../data/type.js'
 
-type Props = {}
+interface CreateEventProps {
+  user: User
+}
 
-const CreateEvent = (props: Props) => {
+const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
+
+
   return (
     <div className='create-event-wrapper'>
         <form>
@@ -14,7 +19,7 @@ const CreateEvent = (props: Props) => {
             <input type='text'/>
             <input type='text'/>
         </form>
-       <TopArtist />
+       <TopArtist user={user}/>
     </div>
   )
 }

@@ -1,14 +1,19 @@
-import React from 'react'
 import ArtistCard from '../ArtistCard/ArtistCard'
 import { Link } from 'react-router-dom'
 
-type Props = {}
+import {User} from '../../data/type.js'
 
-const TopArtist = (props: Props) => {
+interface TopArtistProps {
+  user: User
+}
+
+const TopArtist: React.FC<TopArtistProps>= ({user}) => {
   return (
     <div className='top-artist'>
-        <h2>Top Artist</h2>
-        <Link to='/artistPage/:id'><ArtistCard /></Link> 
+        <h2>Top Artists</h2>
+
+        <ArtistCard user={user}/>
+
     </div>
   )
 }

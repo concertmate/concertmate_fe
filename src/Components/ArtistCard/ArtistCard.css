@@ -1,4 +1,5 @@
 .artist-card {
+    display: flex;
     width: 30em;
     height: 5em;
     border: 1px solid black;
