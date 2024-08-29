@@ -13,10 +13,10 @@ const ArtistCard = (props: Props) => {
     return (
       <>
         <div className='artist-card'>ArtistCard</div>
-        <NavLink to={`${}`}>
+        {/* <NavLink to={`${'/'}`}>
           
           <button></button>
-        </NavLink>
+        </NavLink> */}
       </>
     )
   })
