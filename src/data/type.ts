@@ -22,3 +22,29 @@ export interface User {
     password: string;
 }
 
+export type Event = {
+    event_id: number;
+    event_name: string;
+    venue_name: string;
+    date_time: string;
+    artist: string;
+    location: string;
+    spotify_artist_id: string;
+    ticketmaster_event_id: string;
+    owner: string;
+}
+
+export type PostEvent = {
+    event_name: string;
+    venue_name: string;
+    date_time: string;
+    artist: string;
+    location: string;
+    spotify_artist_id: string;
+    ticketmaster_event_id: string;
+    owner:string;
+}
+
+export type Show = {
+    
+}

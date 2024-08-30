@@ -11,23 +11,14 @@ import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
 import React, { useState } from 'react'
-import {User} from './data/type.js'
+import {User,Event} from './data/type.js'
 import {Registry, Server , Model} from "miragejs"
 import { ModelDefinition } from 'miragejs/-types';
+import {user} from './data/userData.js'
 
 const AuthContext =React.createContext<boolean>(false);
 
-type Event = {
-  event_id: number;
-  event_name: string;
-  venue_name: string;
-  date_time: string;
-  artist: string;
-  location: string;
-  spotify_artist_id: string;
-  ticketmaster_event_id: string;
-  owner: string;
-}
+
 
 const EventModel: ModelDefinition<Event> = Model.extend({})
 type AppRegistry = Registry<
@@ -44,7 +35,9 @@ new Server<AppRegistry>({
     })
     this.post("/api/events", (schema: any, request) => {
       let attrs = JSON.parse(request.requestBody)
-      return schema.events.create(attrs)
+      
+      let newEvent = {...attrs,"event_id":schema.events.length + 1}
+      return schema.events.create(newEvent)
     })
   },
   seeds(server: Server<AppRegistry>) {
