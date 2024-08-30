@@ -5,9 +5,11 @@ import { user } from '../../data/userData.ts'
 
 interface User {
   id: number;
+  username: string;
   email: string;
-  friends: number[]
+  password: string;
 }
+
 interface LoginPageProps {
   handleAuthentication: (isAuthenticated: boolean) => void;
   changeUser: (user: User) => void;

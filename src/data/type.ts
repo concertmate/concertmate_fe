@@ -17,6 +17,8 @@ export interface UserAuthentication {
 
 export interface User {
     id: number;
+    username: string;
     email: string;
-    friends: number[];
-  }
+    password: string;
+}
+

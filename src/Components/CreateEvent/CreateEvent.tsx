@@ -14,7 +14,7 @@ const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
     <div className='create-event-wrapper'>
         <form>
             <h3>Create Event</h3>
-            <input type='text'/>
+            <input placeholder='' type='text'/>
             <input type='text'/>
             <input type='text'/>
             <input type='text'/>

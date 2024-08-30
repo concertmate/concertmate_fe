@@ -9,7 +9,7 @@ interface ArtistCardProps {
 }
 const ArtistCard: React.FC<ArtistCardProps> = ({user}) => { //id
 
-  const {id, email, friends} = user
+  const {id} = user
   const userData = data[id-1]
   const artistCards = userData.map(({external_urls,followers,genres,href,id,images,name,popularity,type,uri}) => {
 
