@@ -23,3 +23,18 @@ export interface User {
     password: string;
 }
 
+export interface Show {
+    id:number
+    name:string
+    date:string
+    venue:string
+    startDate:string
+    image:string
+    location:string
+    url:string
+    performer:{name:string}[]
+}
+
+export interface ArtistName {
+    artistName:string|ReactNode
+}
