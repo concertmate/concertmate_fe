@@ -4,7 +4,7 @@ interface User {
     email: string;
     password: string;
 }
-export const user:User[] = [{
+export const user: User[] = [{
     id: 1,
     username: 'peterkim.pk1',
     email: 'peterkim.pk1@gmail.com',
@@ -20,12 +20,12 @@ export const user:User[] = [{
     id: 3,
     username: 'kylemboomer',
     email: 'kylemboomer@gmail.com',
-    password:'boomerdad'
+    password: 'boomerdad'
 },
 {
     id: 4,
     username: 'baileyjarvis2814',
     email: 'baileyjarvis2814@gmail.com',
-    password:'greenlantern'
+    password: 'greenlantern'
 }
 ]

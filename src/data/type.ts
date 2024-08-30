@@ -1,13 +1,14 @@
-export interface SpotifyArtist {external_urls: {spotify: string};
-followers: {href: null | string, total: number};
-genres: string[];
-href: string;
-id: string;
-images: [{url: string, height: number, width: number},{url: string, height: number, width: number},{url: string, height: number, width: number}];
-name: string;
-popularity: number;
-type: string;
-uri: string;
+export interface SpotifyArtist {
+    external_urls: { spotify: string };
+    followers: Partial< { href: null | string, total: number }>;
+    genres: Readonly<string[]>;
+    href: string;
+    id: string;
+    images: ReadonlyArray<{ url: string, height: number, width: number }>
+    name: string;
+    popularity: number;
+    type: string;
+    uri: string;
 }
 
 export interface UserAuthentication {
