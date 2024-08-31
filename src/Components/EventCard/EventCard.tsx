@@ -1,10 +1,8 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import './EventCard.css'
 
-type Props = {}
 
-const EventCard = (props: Props) => {
+const EventCard = () => {
   return (
     <Link to='/eventPage/:eventId'>
       <div className='event-card'>  
