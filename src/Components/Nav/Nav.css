@@ -16,10 +16,13 @@ nav {
 
 .logo {
     height: 5em;
-    width: 5rem;
+    width: 6rem;
     margin-left: 1rem;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: .5rem;
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: .5rem;
 }
 
 .nav-link {

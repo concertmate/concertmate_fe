@@ -9,7 +9,7 @@ const Nav = (props: Props) => {
   return (
     <nav>
         <div className='nav-link-wrapper'>
-            <Link to='/'>
+            <Link to='/landing'>
                 <img src={logo} alt="" className='logo'/>
             </Link>
             <div className='bttn-box'>
@@ -18,6 +18,9 @@ const Nav = (props: Props) => {
             </Link>
             <Link to='/friendslist' className='nav-link'>
                 <li>Friends</li>
+            </Link>
+            <Link to='/' className='nav-link'>
+                <li>Sign Out</li>
             </Link>
             </div>
         </div >
