@@ -1,6 +1,4 @@
-import {useState} from 'react' 
 import ArtistCard from '../ArtistCard/ArtistCard'
-import ArtistShows from '../ArtistShows/ArtistShows.tsx'
 import {User} from '../../data/type.js'
 
 interface TopArtistProps {
