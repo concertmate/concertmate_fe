@@ -11,28 +11,92 @@ import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
 import React, { useState } from 'react'
+import {User,Event} from './data/type.js'
+import {Registry, Server , Model} from "miragejs"
+import { ModelDefinition } from 'miragejs/-types';
+import {user} from './data/userData.js'
 
 const AuthContext =React.createContext<boolean>(false);
 
+
+
+const EventModel: ModelDefinition<Event> = Model.extend({})
+type AppRegistry = Registry<
+  {event: typeof EventModel;},
+  {events: typeof EventModel;}
+>;
+new Server<AppRegistry>({
+  models: {
+    event: Model,
+  },
+  routes() {
+    this.get("/api/events",(schema: any) => {
+      return schema.events.all();
+    })
+    this.post("/api/events", (schema: any, request) => {
+      let attrs = JSON.parse(request.requestBody)
+      
+      let newEvent = {...attrs,"event_id":schema.events.length + 1}
+      return schema.events.create(newEvent)
+    })
+  },
+  seeds(server: Server<AppRegistry>) {
+    server.create("event", {"event_id": 1, "event_name": "Concert", "venue_name": "cowboys stadium", 
+      "date_time": "2024-12-31T20:00:00Z", "artist": "Colter Wall", "location": "Dallas,TX",
+      "spotify_artist_id": "231", "ticketmaster_event_id": "500", "owner":"kylemboomer@gmail.com"
+    })
+    server.create("event", {"event_id": 2, "event_name": "Concert", "venue_name": "cowboys stadium", 
+      "date_time": "2024-12-31T20:00:00Z", "artist": "Colter Wall", "location": "Dallas,TX",
+      "spotify_artist_id": "231", "ticketmaster_event_id": "500", "owner":"kylemboomer@gmail.com"
+    })
+  },
+})
+//api/:user_id/events/:event_id/join
+//api/events/:event_id/attendees
+//username, password, email
 const App = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
-
+  const [user, setUser] = useState<User>({id: 1,email:'',password:'',username:''})
   function handleAuthentication(isAuthenticated: boolean) {
       setAuthenticated(isAuthenticated)
   }
+  function changeUser(foundUser: User) {
+    setUser(foundUser)
+  }
+  function getEvents() {
+    return fetch('/api/events')
+    .then(resp => resp.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err.message))
+  }
+  function postEvent() {
+    return fetch('api/events', {
+      method: 'POST',
+      body: JSON.stringify(
+        {"event_name": "Concert", "venue_name": "cowboys stadium", 
+          "date_time": "2024-12-31T20:00:00Z", "artist": "Colter Wall", "location": "Dallas,TX",
+          "spotify_artist_id": "231", "ticketmaster_event_id": "500", "owner":"kylemboomer@gmail.com"
+        })
+      ,
+      headers: {
+        "Content-Type":"application/json"
+      }
+    })
+  }
+
   return (
     <>
     <AuthContext.Provider value={authenticated}>
     <Header/>
     <Routes>
-        <Route path="/" element={<LoginPage />} /> 
+        <Route path="/" element={<LoginPage changeUser={changeUser} handleAuthentication={handleAuthentication}/>} /> 
           <Route
             path="/landing"
-            element={<LandingPage handleAuthentication={handleAuthentication} />} 
+            element={<LandingPage loggedInUser={user} />} 
           />
-        <Route path='/createEvent' element={<CreateEvent />}/>
+        <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
         <Route path='/myevents' element={<MyEvents />}/>
-        <Route path='/friendslist' element={<FriendsList/>}/>
+        <Route path='/friendslist' element={<FriendsList loggedInUser={user}/>}/>
         <Route path='/allEventsPage' element={<AllEventsPage />}/>
         <Route path='/eventPage/:eventId' element={<EventPage />} />
         <Route path='/singleFriend/:id' element={<SingleFriendPage />} />

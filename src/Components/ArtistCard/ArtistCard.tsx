@@ -1,27 +1,40 @@
-import {data1} from '../../data/userSpotifyData1.ts'
-import {data2} from '../../data/userSpotifyData2.ts'
-import {data3} from '../../data/userSpotifyData3.ts'
-import {data4} from '../../data/userSpotifyData4.ts'
-
 import './ArtistCard.css'
-import { NavLink } from 'react-router-dom'
-type Props = {}
+import { data } from '../../data/userSpotifyData1.ts'
+import { User } from '../../data/type.js'
 
-const ArtistCard = (props: Props) => {
-  const artistCards = data2.map(({external_urls,followers,genres,href,id,images,name,popularity,type,uri}) => {
 
+interface ArtistCardProps {
+  user: User
+  onArtistClick: (artistName: string) => void
+}
+const ArtistCard: React.FC<ArtistCardProps> = ({ user, onArtistClick }) => {
+
+  const { id } = user
+  const userData = data[id - 1]
+  const artistCards = userData.map(({ genres, id, images, name }) => {
+    let artistID = id;
     return (
       <>
-        <div className='artist-card'>ArtistCard</div>
-        {/* <NavLink to={`${'/'}`}>
-          
-          <button></button>
-        </NavLink> */}
+        <div
+          key={artistID} className='artist-card'
+          onClick={() => onArtistClick(name)}
+          >
+          <img src={images[2].url} alt={name} />
+          <div><p>{name}</p>
+          <div className='genre-container'>{genres.map((genre, index) => (
+            <div key={index}>
+              <div className='genre-tag'>{genre}</div>
+            </div>
+          ))}</div>
+        </div>
+        </div>
       </>
     )
   })
   return (
-    {artistCards}
+    <div>
+      {artistCards}
+    </div>
   )
 }
 

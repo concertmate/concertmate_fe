@@ -1,26 +1,18 @@
-import React, {useContext} from 'react'
-import './LandingPage.css'
-import MyEvents from '../MyEvents/MyEvents'
-import FriendsList from '../FriendsList/FriendsList'
-import AppContext from  '../../Context/AppContext.tsx'
-
+import React from 'react';
+import './LandingPage.css';
+import MyEvents from '../MyEvents/MyEvents';
+import FriendsList from '../FriendsList/FriendsList';
+import { User } from '../../data/type';
 
 interface LandingPageProps {
-  handleAuthentication: (isAuthenticated: boolean) => void;
+  loggedInUser: User;
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ handleAuthentication }) => {
-  const authenticated = useContext(AppContext);
-
-  if (!authenticated) {
-    handleAuthentication(false);
-    return null;
-  }
-
+const LandingPage: React.FC<LandingPageProps> = ({ loggedInUser }) => {
   return (
     <div className="landing-page">
       <MyEvents />
-      <FriendsList />
+      <FriendsList loggedInUser={loggedInUser} />
     </div>
   );
 };

@@ -3,23 +3,33 @@ import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'
 import { user } from '../../data/userData.ts'
 
+interface User {
+  id: number;
+  username: string;
+  email: string;
+  password: string;
+}
 
+interface LoginPageProps {
+  handleAuthentication: (isAuthenticated: boolean) => void;
+  changeUser: (user: User) => void;
+}
 
-const LoginPage = () => {
+const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser}) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
-  const navigate = useNavigate()
-
+  const navigate = useNavigate()  
   const handleLoginClick = () => {
     setIsLoggingIn(true)
   }
 
   const handleFormSubmit = () => {
     const foundUser = user.find((u) => u.email === email);
-  
     if (foundUser) {
+      changeUser(foundUser)
       navigate('/landing');
+      handleAuthentication(true);
     } else {
       setError('Could not find user');
 

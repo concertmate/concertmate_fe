@@ -1,21 +1,31 @@
 interface User {
     id: number;
+    username: string;
     email: string;
+    password: string;
 }
-export const user:User[] = [{
+export const user: User[] = [{
     id: 1,
-    email: 'peterkim.pk1@gmail.com'
+    username: 'peterkim.pk1',
+    email: 'peterkim.pk1@gmail.com',
+    password: 'abc123'
 },
 {
     id: 2,
-    email: 'konber3@gmail.com'
+    username: 'konber3',
+    email: 'konber3@gmail.com',
+    password: 'Adamlikesshwarma'
 },
 {
     id: 3,
-    email: 'kylemboomer@gmail.com'
+    username: 'kylemboomer',
+    email: 'kylemboomer@gmail.com',
+    password: 'boomerdad'
 },
 {
     id: 4,
-    email: 'baileyjarvis2814@gmail.com'
+    username: 'baileyjarvis2814',
+    email: 'baileyjarvis2814@gmail.com',
+    password: 'greenlantern'
 }
 ]

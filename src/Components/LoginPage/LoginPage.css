@@ -4,19 +4,18 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    text-align: center;
   }
   
   .login-page h1 {
     margin-bottom: 20px;
-    font-size: 2.5rem;
-    color: #333;
+    font-size: 3.5rem;
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   }
   
   .login-page button {
     padding: 12px 24px;
-    background-color: #1db954; /* Spotify green */
+    background-color: #1db954;
     color: white;
     border: none;
     border-radius: 5px;
@@ -30,16 +29,27 @@
     background-color: #1aa34a;
   }
   
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
   .login-form {
     background-color: white;
     width: 12rem;
     height: 12rem;
     padding: 30px;
-    border-radius: 10px; /* Rounded edges */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
   }
   
   .login-form label {
@@ -54,12 +64,12 @@
     width: 100%;
     max-width: 300px;
     border: 1px solid #ddd;
-    border-radius: 5px; /* Rounded input */
+    border-radius: 5px;
   }
   
   .login-form button {
     padding: 10px 24px;
-    background-color: #1db954; /* Reuse Spotify green */
+    background-color: #1db954;
     color: white;
     border: none;
     border-radius: 5px;

@@ -1,14 +1,19 @@
-import React from 'react'
+import {useState} from 'react' 
 import ArtistCard from '../ArtistCard/ArtistCard'
-import { Link } from 'react-router-dom'
+import ArtistShows from '../ArtistShows/ArtistShows.tsx'
+import {User} from '../../data/type.js'
 
-type Props = {}
+interface TopArtistProps {
+  user: User;
+  handleArtistSelection: (artistName: string) => void
+}
 
-const TopArtist = (props: Props) => {
+const TopArtist: React.FC<TopArtistProps>= ({user,handleArtistSelection}) => {
+
   return (
     <div className='top-artist'>
-        <h2>Top Artist</h2>
-        <Link to='/artistPage/:id'><ArtistCard /></Link> 
+        <h2>Top Artists</h2>
+        <ArtistCard user={user} onArtistClick={handleArtistSelection} />
     </div>
   )
 }
