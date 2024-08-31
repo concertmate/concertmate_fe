@@ -25,6 +25,10 @@ nav {
     border-radius: .5rem;
 }
 
+.logo:hover {
+    background-color: #874cd4;;
+}
+
 .nav-link {
     text-align: center;
     width: 6rem;
