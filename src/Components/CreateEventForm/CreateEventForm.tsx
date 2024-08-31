@@ -20,7 +20,6 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
     const singleShowData = tmData[selectedArtistIndex][showOption]
     let singleShowDataUrl = singleShowData.url.split('/')
     const singleArtistData = spData.find(artist => artist.name === selectedArtist)
-
     if (!singleShowData.url.includes("ticketmaster")) {
      singleShowDataUrl[4] = 'No Ticketmaster id found'
     }
@@ -33,7 +32,7 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
       date_time: singleShowData.startDate,
       artist: singleShowData.name,
       location: `${singleShowData.location.address.streetAddress}${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
-      spotify_artist_id: singleArtistData.id,
+      spotify_artist_id: singleArtistData!.id,
       ticketmaster_event_id: singleShowDataUrl[4],
       owner: user.email
     };

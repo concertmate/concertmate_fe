@@ -1,9 +1,6 @@
-import React from 'react'
 import './EventPage.css'
 
-type Props = {}
-
-const EventPage = (props: Props) => {
+const EventPage = () => {
   return (
     <div className='event-page'>EventPage</div>
   )

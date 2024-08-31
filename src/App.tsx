@@ -6,7 +6,6 @@ import LandingPage from './Components/LandingPage/LandingPage.js'
 import MyEvents from './Components/MyEvents/MyEvents.js'
 import CreateEvent from './Components/CreateEvent/CreateEvent.js'
 import FriendsList from './Components/FriendsList/FriendsList.js'
-import AllEventsPage from './Components/AllEventsPage/AllEventsPage.js'
 import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
@@ -48,9 +47,7 @@ new Server<AppRegistry>({
     })
   },
 })
-//api/:user_id/events/:event_id/join
-//api/events/:event_id/attendees
-//username, password, email
+
 const App = () => {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
   const [user, setUser] = useState<User>({id: 1,email:'',password:'',username:''})
@@ -60,13 +57,6 @@ const App = () => {
   function changeUser(foundUser: User) {
     setUser(foundUser)
   }
-  function getEvents() {
-    return fetch('/api/events')
-    .then(resp => resp.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err.message))
-  }
-
 
   return (
     <>
@@ -81,7 +71,6 @@ const App = () => {
         <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
         <Route path='/myevents' element={<MyEvents />}/>
         <Route path='/friendslist' element={<FriendsList loggedInUser={user}/>}/>
-        <Route path='/allEventsPage' element={<AllEventsPage />}/>
         <Route path='/eventPage/:eventId' element={<EventPage />} />
         <Route path='/singleFriend/:id' element={<SingleFriendPage />} />
         <Route path='/artistPage/:id' element={<ArtistPage />} />
