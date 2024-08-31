@@ -27,7 +27,6 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
     if (singleShowDataUrl[4] === 'event') {
       singleShowDataUrl[4] = singleShowDataUrl[5]
     }
-    console.log(singleShowDataUrl)
     const userEvent = {
       event_name: eventName,
       venue_name: singleShowData.location.name,

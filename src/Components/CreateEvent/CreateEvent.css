@@ -1,7 +1,9 @@
 .create-event-wrapper {
     padding-top: 6rem;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 

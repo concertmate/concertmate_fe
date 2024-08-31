@@ -24,7 +24,7 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
     }, [artistName])
 
 
-    const shows: TicketmasterShow[] = tmData[selectedArtistIndex]
+    const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter(artist => artist.name === artistName)
     console.log(shows)
     if (!shows.length) {
         return (
@@ -38,18 +38,20 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
                 {shows.map((show, index) => (
                 <div key={index} className='concert-card'>
                     <img src={show.image} alt={show.name} />
-                    <p>{artistName}</p>
-                    <p>{show.startDate}</p>
-                    <p>{show.location.name}</p>
-                    <a href={show.url} target="_blank" rel="noopener noreferrer">
-                        More Details Here
-                    </a>
-                    <div className="radio" onClick={() => handleShowOption(index)}>
-                        <label>
-                            <input type="radio" value={showOption} name={`option${index}`}checked={showOption == index} />
-                        </label>
+                    <div className='concert-info'>
+                        <p>{artistName}</p>
+                        <p>{show.startDate}</p>
+                        <p>{show.location.name}</p>
+                        <a href={show.url} target="_blank" rel="noopener noreferrer">
+                            More Details Here
+                        </a>
                     </div>
-                </div>
+                        <div className="radio" onClick={() => handleShowOption(index)}>
+                            <label>
+                                <input type="radio" value={showOption} name={`option${index}`}checked={showOption == index} />
+                            </label>
+                        </div>
+                    </div>
             ))}
             </div>
         </div>
