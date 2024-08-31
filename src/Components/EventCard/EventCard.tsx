@@ -6,9 +6,12 @@ type Props = {}
 
 const EventCard = (props: Props) => {
   return (
-  <div className='event-card'>  
-    <Link to='/eventPage/:eventId'>EventCard</ Link>
-  </div>
+    <Link to='/eventPage/:eventId'>
+      <div className='event-card'>  
+      <h2>My Event</h2>
+        <p></p>
+      </div>
+    </ Link>
   )
 }
 
