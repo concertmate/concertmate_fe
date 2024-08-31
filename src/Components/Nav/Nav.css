@@ -10,7 +10,8 @@ nav {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
-    border: rebeccapurple 2px solid;
+    background-color: rgb(26, 26, 26);
+    height: 100%;
 }
 
 .logo {
@@ -28,6 +29,10 @@ nav {
     border-radius: .4rem;
     margin: 1rem;
     border: 5%;
-    background-color: #b6d0e2;
+    background-color: white;
 
+}
+
+.nav-link:hover {
+    background-color: #874cd4;
 }

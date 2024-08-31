@@ -3,3 +3,19 @@
     display: flex;
     justify-content: space-around;
 }
+
+@keyframes slideInFadeIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+.artist-card {
+    animation: slideInFadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}

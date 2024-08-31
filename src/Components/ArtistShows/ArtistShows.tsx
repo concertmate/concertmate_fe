@@ -10,6 +10,7 @@ interface ArtistShowProps {
 
 const ArtistShows: React.FC<ArtistShowProps> = ({user, artistName}) => {
     const [selectedArtistIndex, setSelectedArtistIndex] = useState<number>(0)
+    const [option, setOption] = useState()
     useEffect(() => {
         tmData.forEach((artistData,index) => {
             if (artistData.find((artist) => artist.name === artistName)) {
@@ -17,6 +18,9 @@ const ArtistShows: React.FC<ArtistShowProps> = ({user, artistName}) => {
             }
         })
     },[])
+    function handleOptionChange() {
+        
+    }
     const {id} = user
     const tmData = tmData1[id-1]
 
@@ -39,6 +43,11 @@ const ArtistShows: React.FC<ArtistShowProps> = ({user, artistName}) => {
                         <a href={show.url} target="_blank" rel="noopener noreferrer">
                             More Details Here
                         </a>
+                        <div className="radio">
+                            <label>
+                                <input type="radio" value={`option${index}`} checked={true} />
+                            </label>
+                        </div>
                     </div>
                 ))}
             </div>

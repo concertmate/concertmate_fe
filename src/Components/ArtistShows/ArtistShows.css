@@ -1,3 +1,6 @@
 .show-card{
-    
+    background-color: rgb(26,26,26);
+    height: fit-content;
+    margin: 3rem;
+    padding: 2rem;
 }
