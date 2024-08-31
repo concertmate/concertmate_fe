@@ -99,11 +99,11 @@ const App = () => {
         <Route path="/" element={<LoginPage changeUser={changeUser} handleAuthentication={handleAuthentication}/>} /> 
           <Route
             path="/landing"
-            element={<LandingPage  />} 
+            element={<LandingPage loggedInUser={user} />} 
           />
         <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
         <Route path='/myevents' element={<MyEvents />}/>
-        <Route path='/friendslist' element={<FriendsList/>}/>
+        <Route path='/friendslist' element={<FriendsList loggedInUser={user}/>}/>
         <Route path='/allEventsPage' element={<AllEventsPage />}/>
         <Route path='/eventPage/:eventId' element={<EventPage />} />
         <Route path='/singleFriend/:id' element={<SingleFriendPage />} />

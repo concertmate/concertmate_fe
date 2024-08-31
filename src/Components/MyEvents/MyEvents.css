@@ -6,7 +6,8 @@
     height: 80%;
     width: 50rem;
     margin: 1.25rem;
-    background-color: rgb(251, 251, 155);
+    background-color: rgb(26, 26, 26);
+    border-radius: .5rem;
 }
 
 .event-wrapper {
@@ -16,9 +17,10 @@
     align-items: center;
     overflow-y: scroll;
     height: auto;
-    margin-bottom: 2rem;
-    width: 98%;
-    background-color: rgb(255, 255, 255);
+    margin: 2rem;
+    width: 85%;
+    background-color: rgb(40, 40, 40);
+
 }
 
 .bttn-box {

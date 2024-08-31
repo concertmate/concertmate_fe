@@ -1,14 +1,18 @@
-import React from 'react'
-import './LandingPage.css'
-import MyEvents from '../MyEvents/MyEvents'
-import FriendsList from '../FriendsList/FriendsList'
+import React from 'react';
+import './LandingPage.css';
+import MyEvents from '../MyEvents/MyEvents';
+import FriendsList from '../FriendsList/FriendsList';
+import { User } from '../../data/type';
 
-const LandingPage: React.FC = ({}) => {
+interface LandingPageProps {
+  loggedInUser: User;
+}
 
+const LandingPage: React.FC<LandingPageProps> = ({ loggedInUser }) => {
   return (
     <div className="landing-page">
       <MyEvents />
-      <FriendsList />
+      <FriendsList loggedInUser={loggedInUser} />
     </div>
   );
 };
