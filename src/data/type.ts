@@ -35,6 +35,49 @@ export interface Show {
     performer:{name:string}[]
 }
 
+export interface TicketmasterShow {
+    "@context": string;
+    "@type": string;
+    url: string;
+    name: string;
+    description: string;
+    image: string;
+    startDate: string;
+    endDate: string;
+    eventStatus: string;
+    eventAttendanceMode: string;
+    location: {
+        "@type":string; 
+        name: string;
+        sameAs: string;
+        address: {
+            "@type": string;
+            streetAddress: string;
+            addressLocality: string;
+            addressRegion: string;
+            postalCode: string;
+            addressCountry: string;
+        }
+        geo: {
+            "@type": string;
+            latitude: number;
+            longitude: number;
+        }
+    }
+    offers: {
+        "@type": string;
+        availability: string;
+        description: string;
+        url: string;
+        validFrom: string;
+        availabilityStarts: string;
+    }
+    performer: {
+        "@type": string;
+        name: string;
+        sameAs: string;
+    }[]
+}
 export interface ArtistName {
-    artistName:string|ReactNode
+    artistName:string|React.ReactNode
 }

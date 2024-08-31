@@ -12,18 +12,21 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ user, onArtistClick }) => {
   const { id } = user
   const userData = data[id - 1]
   const artistCards = userData.map(({ genres, id, images, name }) => {
-
+    let artistID = id;
     return (
       <>
         <div
-          key={id} className='artist-card'
-          onClick={() => onArtistClick(name)} //style cursor to pointer for this too
+          key={artistID} className='artist-card'
+          onClick={() => onArtistClick(name)}
           >
           <img src={images[2].url} alt={name} />
-          <p>{name}</p>
-          {genres.map((genre, index) => (
-            <div key={index}>{genre}</div>
-          ))}
+          <div><p>{name}</p>
+          <div className='genre-container'>{genres.map((genre, index) => (
+            <div key={index}>
+              <div className='genre-tag'>{genre}</div>
+            </div>
+          ))}</div>
+        </div>
         </div>
       </>
     )

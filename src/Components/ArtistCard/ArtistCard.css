@@ -1,6 +1,26 @@
 .artist-card {
     display: flex;
-    width: 30em;
-    height: 5em;
+    width: 25rem;
+    height: auto;
     border: 1px solid black;
+    margin: 1rem;
+    cursor: pointer;
+    background-color: rgb(42, 42, 42);
+    border-radius: ;
+}
+
+.artist-card p {
+    color: white;
+}
+
+.genre-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.genre-tag {
+    color: white;
+    background-color: rgb(26,26,26);
+    border-radius: .5rem;
+    margin: .2rem;
 }

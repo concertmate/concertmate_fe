@@ -1,16 +1,16 @@
 import {useState} from 'react' 
 import ArtistCard from '../ArtistCard/ArtistCard'
-import ArtistShows from '../ArtistShows/ArtistShows.js'
-import {User, ArtistName} from '../../data/type.js'
+import ArtistShows from '../ArtistShows/ArtistShows.tsx'
+import {User} from '../../data/type.js'
 
 interface TopArtistProps {
   user: User
 }
 
 const TopArtist: React.FC<TopArtistProps>= ({user}) => {
-  const [selectedArtist, setSelectedArtist] = useState<ArtistName | ''>('')
+  const [selectedArtist, setSelectedArtist] = useState<string>('')
 
-  const handleArtistSelection = (artistName:ArtistName) => {
+  const handleArtistSelection = (artistName:string) => {
     setSelectedArtist(artistName) 
   }
   return (
