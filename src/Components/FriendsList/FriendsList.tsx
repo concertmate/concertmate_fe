@@ -9,7 +9,9 @@ const FriendsList = (props: Props) => {
   return (
     <div className='friends-list'>
       <h2>Friends List </h2>
-      <SingleFriend />
+    <div className='friend-card-wrapper'>
+      <SingleFriend/>
+    </div>
     </div>
   )
 }

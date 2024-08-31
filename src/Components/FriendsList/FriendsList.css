@@ -1,9 +1,18 @@
+
+
 .friends-list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 50%;
-    background-color: rgb(145, 145, 255);
+    background-color: rgb(26, 26, 26);
     height: 40rem;
+    border-bottom: 0.5rem;
+}
+
+.friend-card-wrapper {
+    width: 70%;
+    height: 50%;
+    background-color: rgb(40, 40, 40);
 }

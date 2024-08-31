@@ -1,38 +1,42 @@
 import {useState} from 'react'
 import { User, PostEvent } from '../../data/type'
 import { tmData1 } from '../../data/TicketMasterData1'
+import { data } from '../../data/userSpotifyData1'
 
-//  event_name: string;
-// venue_name: string; ticketmaster
-// date_time: string; ticketmaster
-// artist: string; spotify
-// location: string; ticketmaster
-// spotify_artist_id: string; spotify
-// ticketmaster_event_id: string; spotify
 interface CreateEventFormProps {
     user: User,
     postEvent: (userEvent: PostEvent) => void;
-    selectedArtist: 
+    selectedArtistIndex: number;
+    showOption: number;
+    selectedArtist: string;
 }
-const CreateEventForm: React.FC<CreateEventFormProps> = ({user, postEvent, selectedArtist}) => {
-  function handleSubmit(e) {
+const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, postEvent, selectedArtistIndex, showOption}) => {
+  const [eventName, setEventName] = useState<string>('')
+  function handleSubmit(e: React.SyntheticEvent) {
+    e.preventDefault();
     const {id} = user
     const tmData = tmData1[id-1]
-    let ticketmaster_event_id;
-    
-    let singleArtistShowsData = tmData.find(artist => artist.name === selectedArtist)
-    if (!singleArtistShowsData.url.includes("ticketmaster")) {
-      
+    const spData = data[id-1]
+    const singleShowData = tmData[selectedArtistIndex][showOption]
+    let singleShowDataUrl = singleShowData.url.split('/')
+    const singleArtistData = spData.find(artist => artist.name === selectedArtist)
+
+    if (!singleShowData.url.includes("ticketmaster")) {
+     singleShowDataUrl[4] = 'No Ticketmaster id found'
     }
-    
+    if (singleShowDataUrl[4] === 'event') {
+      singleShowDataUrl[4] = singleShowDataUrl[5]
+    }
+    console.log(singleShowDataUrl)
     const userEvent = {
-      event_name: ;
-      venue_name: ;
-      date_time: ;
-      artist: ;
-      location: ;
-      spotify_artist_id: ;
-      ticketmaster_event_id: ;
+      event_name: eventName,
+      venue_name: singleShowData.location.name,
+      date_time: singleShowData.startDate,
+      artist: singleShowData.name,
+      location: `${singleShowData.location.address.streetAddress}${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
+      spotify_artist_id: singleArtistData.id,
+      ticketmaster_event_id: singleShowDataUrl[4],
+      owner: user.email
     };
     postEvent(userEvent)
   }
@@ -41,9 +45,8 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({user, postEvent, selec
       <form >
         <h3>Create Event</h3>
         <label htmlFor='event-name'></label>
-        <input placeholder='Event Name' id='event-name'type='text' name='event-name'/>
-        <label htmlFor='venu'></label>
-        <button type='submit'>Create Event</button>
+        <input placeholder='Event Name' id='event-name'type='text' name='event-name' onChange={(e) => setEventName(e.target.value)}/>
+        <button type='submit' onClick={(e) => handleSubmit(e)}>Create Event</button>
     </form> 
     </div>
 

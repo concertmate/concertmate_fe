@@ -15,30 +15,34 @@ interface CreateEventProps {
 // spotify_artist_id: string;
 // ticketmaster_event_id: string;
 const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
+  const [selectedArtist, setSelectedArtist] = useState<string>('')
+  const [selectedArtistIndex, setSelectedArtistIndex] = useState<number>(0)
+  const [showOption, setShowOption] = useState<number>(0)
   function postEvent(userEvent: PostEvent) {
-
     fetch('/api/events', {
       method: 'POST',
       headers: {
         "Content-Type":"application/json"
       },
       body: JSON.stringify(userEvent), 
-    })
+    })}
     
-  }  const [selectedArtist, setSelectedArtist] = useState<string>('')
-  const handleArtistSelection = (artistName:string) => {
-    setSelectedArtist(artistName) 
-  }
+    const handleArtistSelection = (artistName:string) => {
+      setSelectedArtist(artistName) 
+    }
+    const handleSingleArtistSelection = (artistSelection: number) => {
+      setSelectedArtistIndex(artistSelection)
+    } 
+    const handleShowOption = (showSelection: number) => {
+      setShowOption(showSelection)
+    }
   return (
     <div className='create-event-wrapper'>
-      <CreateEventForm postEvent={postEvent} user={user}/>
-      <div>
-        <form>
-            <h3>Create Event</h3>
-            <input placeholder='' type='text'/>
-        </form>
-        {selectedArtist && <ArtistShows user={user} artistName={selectedArtist}/>}
-      </div>
+        <CreateEventForm postEvent={postEvent} user={user} selectedArtistIndex={selectedArtistIndex} showOption={showOption} selectedArtist={selectedArtist}/>
+        {selectedArtist && <ArtistShows user={user} artistName={selectedArtist} 
+        handleSingleArtistSelection={handleSingleArtistSelection} selectedArtistIndex={selectedArtistIndex}
+        showOption={showOption} handleShowOption={handleShowOption}/>}
+      
        <TopArtist user={user} handleArtistSelection={handleArtistSelection}/>
     </div>
   )

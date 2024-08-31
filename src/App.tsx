@@ -14,11 +14,8 @@ import React, { useState } from 'react'
 import {User,Event} from './data/type.js'
 import {Registry, Server , Model} from "miragejs"
 import { ModelDefinition } from 'miragejs/-types';
-import {user} from './data/userData.js'
 
 const AuthContext =React.createContext<boolean>(false);
-
-
 
 const EventModel: ModelDefinition<Event> = Model.extend({})
 type AppRegistry = Registry<
@@ -36,7 +33,7 @@ new Server<AppRegistry>({
     this.post("/api/events", (schema: any, request) => {
       let attrs = JSON.parse(request.requestBody)
       
-      let newEvent = {...attrs,"event_id":schema.events.length + 1}
+      let newEvent = {...attrs,"event_id":schema.events.all().length + 1}
       return schema.events.create(newEvent)
     })
   },
@@ -69,20 +66,7 @@ const App = () => {
     .then(data => console.log(data))
     .catch(err => console.log(err.message))
   }
-  function postEvent() {
-    return fetch('api/events', {
-      method: 'POST',
-      body: JSON.stringify(
-        {"event_name": "Concert", "venue_name": "cowboys stadium", 
-          "date_time": "2024-12-31T20:00:00Z", "artist": "Colter Wall", "location": "Dallas,TX",
-          "spotify_artist_id": "231", "ticketmaster_event_id": "500", "owner":"kylemboomer@gmail.com"
-        })
-      ,
-      headers: {
-        "Content-Type":"application/json"
-      }
-    })
-  }
+
 
   return (
     <>
