@@ -15,7 +15,7 @@ const MyEvents = ({events}: Props) => {
 
         <div className='bttn-box'>
           <Link to='/createEvent'> <p>Create Event</p></Link>
-          <Link to='/allEventsPage'> <p>My Event's</p></Link>
+          <Link to='/allEventsPage'> <p>My Events</p></Link>
         </div>
         
       </div>

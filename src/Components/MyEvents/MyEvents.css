@@ -22,6 +22,12 @@
     background-color: rgb(40, 40, 40);
 
 }
+p {
+    color:white; 
+}
+h2 {
+    color:white;
+}
 
 .bttn-box {
     display: flex;
