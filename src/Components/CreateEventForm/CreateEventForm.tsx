@@ -14,6 +14,7 @@ interface CreateEventFormProps {
     postEvent: (userEvent: PostEvent) => void;
     selectedArtist: 
 }
+
 const CreateEventForm: React.FC<CreateEventFormProps> = ({user, postEvent, selectedArtist}) => {
   function handleSubmit(e) {
     const {id} = user

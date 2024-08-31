@@ -31,7 +31,7 @@ const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
   }
   return (
     <div className='create-event-wrapper'>
-      <CreateEventForm postEvent={postEvent} user={user}/>
+      {/* <CreateEventForm postEvent={postEvent} user={user}/> */}
       <div>
         <form>
             <h3>Create Event</h3>
