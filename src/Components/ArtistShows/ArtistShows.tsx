@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { tmData1 } from '../../data/TicketMasterData1'
 import { User, TicketmasterShow } from '../../data/type'
 import './ArtistShows.css'

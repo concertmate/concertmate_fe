@@ -1,11 +1,7 @@
-import React from 'react'
 import './AllEventsPage.css'
 
-type Props = {
-  events: Event
-}
 
-const AllEventsPage: React.FC<Props> = ({ events }) => {
+const AllEventsPage = () => {
 
   // const allEvents = events.map((event) => (
   //   <div key={event.event_id} className='event-card'>
