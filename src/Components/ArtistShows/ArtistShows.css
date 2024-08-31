@@ -1,6 +1,31 @@
-.show-card{
+.show-card-wrapper {
     background-color: rgb(26,26,26);
     height: fit-content;
+    width: 50%;
     margin: 3rem;
     padding: 2rem;
+}
+.concert-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(40,40,40);
+}
+
+
+.concert-card {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 15rem;
+    margin: 2rem;
+    background-color: rgb(26,26,26);
+}
+
+.concert-card img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: 1rem;
 }
