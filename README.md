@@ -14,7 +14,8 @@
 - React, TypeScript, React Router, Cypress, JSX, CSS
 ### Screenshot of App
 ![Screenshot 2024-08-31 at 7 31 11 PM](https://github.com/user-attachments/assets/1025d89c-db9e-4dd6-b3df-8a07d4d3d875)
- 
+ <img width="1268" alt="ConcertMate_Screenshot_ArtistShows" src="https://github.com/user-attachments/assets/d4ecc032-5f58-4622-9b05-c03901eb589d">
+
 ### Working App
 [Deployed Link](http://concertmate-fe.vercel.app)
 
