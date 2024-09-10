@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-const HomeButton = (props: Props) => {
+const HomeButton = () => {
   return (
     <div>HomeButton</div>
   )

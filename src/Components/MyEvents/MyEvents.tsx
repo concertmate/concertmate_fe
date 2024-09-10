@@ -2,9 +2,8 @@ import EventCard from '../EventCard/EventCard'
 import { Link } from 'react-router-dom'
 import '../MyEvents/MyEvents.css'
 
-type Props = {}
 
-const MyEvents = ({events}: Props) => {
+const MyEvents = () => {
   return (
     <div className='my-event-widget'>
       <h2>My Events</h2>

@@ -1,11 +1,8 @@
-import React from 'react'
 import { Link } from "react-router-dom"
 import './Nav.css'
-import logo from '../../assets/cblogo1.png'
+import logo from '../../../public/assets/cblogo1.png'
 
-type Props = {}
-
-const Nav = (props: Props) => {
+const Nav = () => {
   return (
     <nav>
         <div className='nav-link-wrapper'>
