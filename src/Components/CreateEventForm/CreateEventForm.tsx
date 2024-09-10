@@ -2,15 +2,15 @@ import {useState} from 'react'
 import { User, PostEvent } from '../../data/type'
 import { tmData1 } from '../../data/TicketMasterData1'
 import { data } from '../../data/userSpotifyData1'
+import postUserEvent from '../../APICall';
 
 interface CreateEventFormProps {
     user: User,
-    postEvent: (userEvent: PostEvent) => void;
     selectedArtistIndex: number;
     showOption: number;
     selectedArtist: string;
 }
-const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, postEvent, selectedArtistIndex, showOption}) => {
+const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, selectedArtistIndex, showOption}) => {
   const [eventName, setEventName] = useState<string>('')
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
@@ -34,9 +34,11 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
       location: `${singleShowData.location.address.streetAddress}${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
       spotify_artist_id: singleArtistData!.id,
       ticketmaster_event_id: singleShowDataUrl[4],
-      owner: user.email
     };
-    postEvent(userEvent)
+    postUserEvent({id:id,userEvent: userEvent})
+    .then(data => {
+      console.log(data)
+    })
   }
   return (
     <div className='form-wrapper'>
