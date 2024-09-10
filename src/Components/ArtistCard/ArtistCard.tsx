@@ -14,21 +14,19 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ user, onArtistClick }) => {
   const artistCards = userData.map(({ genres, id, images, name }) => {
     let artistID = id;
     return (
-      <>
-        <div
-          key={artistID} className='artist-card'
-          onClick={() => onArtistClick(name)}
-          >
-          <img src={images[2].url} alt={name} />
-          <div><p>{name}</p>
-          <div className='genre-container'>{genres.map((genre, index) => (
-            <div key={index}>
-              <div className='genre-tag'>{genre}</div>
-            </div>
-          ))}</div>
+      <div
+        key={artistID} className='artist-card'
+        onClick={() => onArtistClick(name)}
+        >
+        <img src={images[2].url} alt={name} />
+        <div><p>{name}</p>
+        <div className='genre-container'>{genres.map((genre, index) => (
+          <div key={index}>
+            <div className='genre-tag'>{genre}</div>
+          </div>
+        ))}</div>
         </div>
-        </div>
-      </>
+      </div>
     )
   })
   return (

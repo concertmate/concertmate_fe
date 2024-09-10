@@ -25,7 +25,6 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
 
 
     const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter(artist => artist.name === artistName)
-    console.log(shows)
     if (!shows.length) {
         return (
             <p>No concerts available for {artistName}. Try another artist, or check back soon!</p>
@@ -46,9 +45,9 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
                             More Details Here
                         </a>
                     </div>
-                        <div className="radio" onClick={() => handleShowOption(index)}>
+                        <div className="radio">
                             <label>
-                                <input type="radio" value={showOption} name={`option${index}`}checked={showOption == index} />
+                                <input type="radio" value={showOption} name={`option${index}`} checked={showOption == index} onChange={() => handleShowOption(index)}/>
                             </label>
                         </div>
                     </div>

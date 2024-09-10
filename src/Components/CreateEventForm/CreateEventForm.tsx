@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { User, PostEvent } from '../../data/type'
+import { User } from '../../data/type'
 import { tmData1 } from '../../data/TicketMasterData1'
 import { data } from '../../data/userSpotifyData1'
 import postUserEvent from '../../APICall';
@@ -47,10 +47,8 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
         <label htmlFor='event-name'></label>
         <input placeholder='Event Name' id='event-name'type='text' name='event-name' onChange={(e) => setEventName(e.target.value)}/>
         <button type='submit' onClick={(e) => handleSubmit(e)}>Create Event</button>
-    </form> 
+      </form> 
     </div>
-
-
   )
 }
 
