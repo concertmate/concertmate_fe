@@ -101,5 +101,4 @@ export type PostEvent = {
     location: string;
     spotify_artist_id: string;
     ticketmaster_event_id: string;
-    owner:string;
 }
