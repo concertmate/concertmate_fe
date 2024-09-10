@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import './Nav.css'
 import logo from '../../../public/assets/cblogo1.png'
 
 const Nav = () => {
+    const location = useLocation();
+    if (location.pathname === '/') {
+        return null; 
+      }
   return (
     <nav>
         <div className='nav-link-wrapper'>
