@@ -20,7 +20,6 @@ export interface User {
     id: number;
     username: string;
     email: string;
-    password: string;
 }
 
 export interface Show {
@@ -99,6 +98,5 @@ export type PostEvent = {
     date_time: string;
     artist: string;
     location: string;
-    spotify_artist_id: string;
-    ticketmaster_event_id: string;
+    user_id: number;
 }

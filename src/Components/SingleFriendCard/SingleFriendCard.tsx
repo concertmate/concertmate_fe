@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from '../../data/type';
-
+import './SingleFriendCard.css'
 interface SingleFriendProps {
   friend: User;
 }
@@ -8,8 +8,9 @@ interface SingleFriendProps {
 const SingleFriend: React.FC<SingleFriendProps> = ({ friend }) => {
   return (
     <div className='single-friend'>
-      <h3>{friend.username}</h3>
-      <p>{friend.email}</p>
+      <p className='friend-text'><span className='friend-property'>User: </span>{friend.username}</p>
+  
+      <p className='friend-text'><span className='friend-property'>Email: </span> {friend.email}</p>
     </div>
   );
 };

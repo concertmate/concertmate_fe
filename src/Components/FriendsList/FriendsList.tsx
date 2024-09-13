@@ -9,15 +9,15 @@ interface FriendsListProps {
 }
 
 const FriendsList: React.FC<FriendsListProps> = ({ loggedInUser }) => {
-
   const friends = allUsers.filter((friend) => friend.id !== loggedInUser.id);
-
   return (
     <div className='friends-list'>
-      <h2>Friends List</h2>
-      {friends.map((friend) => (
-        <SingleFriend key={friend.id} friend={friend} />
-      ))}
+      <h2>My Friends</h2>
+      <div className='friends-wrapper'>
+        {friends.map((friend) => (
+          <SingleFriend key={friend.id} friend={friend} />
+        ))}
+      </div>
     </div>
   );
 };

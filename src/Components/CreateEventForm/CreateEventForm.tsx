@@ -32,13 +32,13 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({selectedArtist, user, 
       date_time: singleShowData.startDate,
       artist: singleShowData.name,
       location: `${singleShowData.location.address.streetAddress}${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
-      spotify_artist_id: singleArtistData!.id,
-      ticketmaster_event_id: singleShowDataUrl[4],
+      user_id: 1
     };
-    postUserEvent({id:id,userEvent: userEvent})
+    postUserEvent({id:1,userEvent: userEvent})
     .then(data => {
       console.log(data)
     })
+    .catch(err => console.log(err))
   }
   return (
     <div className='form-wrapper'>

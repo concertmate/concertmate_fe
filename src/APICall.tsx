@@ -5,14 +5,15 @@ interface Props {
     userEvent: PostEvent;
 }
 const postUserEvent = ({id,userEvent}:Props) => {
-  console.log(userEvent)
-   const baseURL = 'https://concertmate-be-914112705dc5.herokuapp.com/'
-   return fetch(`${baseURL}api/users/${id}/events`, {
+   const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
+   const newEvent = {event: userEvent}
+   console.log(newEvent)
+   return fetch(`${baseURL}api/v1/users/${id}/user_events`, {
         method: 'POST',
         headers: {
           "Content-Type":"application/json"
         },
-        body: JSON.stringify(userEvent), 
+        body: JSON.stringify(newEvent), 
       })
   .then(resp => {
     console.log(resp)
