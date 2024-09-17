@@ -1,31 +1,50 @@
 .show-card-wrapper {
-    background-color: rgba(26,26,26);
+    /* background-color: rgba(26,26,26); */
     height: fit-content;
+    min-width: 35rem;
     width: 50%;
     margin: 3rem;
     padding: 2rem;
+    h3 {
+        text-align: center;
+    }
 }
 .concert-wrapper {
-    display: flex;
+    display: grid;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     background-color: rgb(40,40,40);
-}
+    min-width: 35rem;
 
+}
 
 .concert-card {
     display: flex;
-    flex-direction: row;
-    width: 90%;
-    height: 15rem;
-    margin: 2rem;
-    background-color: rgb(26,26,26);
+    justify-content: space-between;
+    min-width: 25rem;
+    width: 35rem;
+    height: 12rem;
+    background-color: rgba(26,26,26,0.5)
+
+}
+.concert-card:hover {
+    background-color: rgba(26,26,26,1)
+}
+.concert-card:not(:first-child) {
+    margin-top: 1rem ;
 }
 
-.concert-card img{
+.concert-info {
+    width: 15em;
+}
+.concert-img-container{
     height: 10rem;
     width: 10rem;
-    border-radius: 50%;
     margin: 1rem;
+    img {
+        width: 100%;
+    }
+}
+input[type='radio']:hover {
+    cursor: pointer;
 }

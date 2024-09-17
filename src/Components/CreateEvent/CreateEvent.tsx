@@ -25,11 +25,13 @@ const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
   return (
     <div className='create-event-wrapper'>
         <CreateEventForm user={user} selectedArtistIndex={selectedArtistIndex} showOption={showOption}/>
-        {selectedArtist && <ArtistShows user={user} artistName={selectedArtist} 
-        handleSingleArtistSelection={handleSingleArtistSelection} selectedArtistIndex={selectedArtistIndex}
-        showOption={showOption} handleShowOption={handleShowOption}/>}
+        <div className='show-artist-container'>
+          {selectedArtist && <ArtistShows user={user} artistName={selectedArtist} 
+          handleSingleArtistSelection={handleSingleArtistSelection} selectedArtistIndex={selectedArtistIndex}
+          showOption={showOption} handleShowOption={handleShowOption}/>}
+        <TopArtist user={user} handleArtistSelection={handleArtistSelection}/>
+        </div>
       
-       <TopArtist user={user} handleArtistSelection={handleArtistSelection}/>
     </div>
   )
 }

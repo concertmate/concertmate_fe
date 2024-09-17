@@ -43,7 +43,7 @@ export interface TicketmasterShow {
     name: string;
     description: string;
     image: string;
-    startDate: string;
+    startDate: Date | string;
     endDate: string;
     eventStatus: string;
     eventAttendanceMode: string;
@@ -77,7 +77,8 @@ export interface TicketmasterShow {
         "@type": string;
         name: string;
         sameAs: string;
-    }[]
+    }[],
+    newDate?: string | React.ReactNode
 }
 export interface ArtistName {
     artistName:string|React.ReactNode
