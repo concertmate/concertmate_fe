@@ -8,9 +8,8 @@ interface ArtistCardProps {
   onArtistClick: (artistName: string) => void
 }
 const ArtistCard: React.FC<ArtistCardProps> = ({ user, onArtistClick }) => {
-
   const { id } = user
-  const userData = data[id - 1]
+  const userData = data[id - 34]
   const artistCards = userData.map(({ genres, id, images, name }) => {
     let artistID = id;
     return (

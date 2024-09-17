@@ -1,6 +1,7 @@
 describe('Login Page Flow', () => {
+  const url = 'http://localhost:5173'
   beforeEach(() => {
-    cy.visit('http://127.0.0.1:5173/');
+    cy.visit(url);
   });
 
   it('should display the initial login button', () => {
@@ -27,4 +28,5 @@ describe('Login Page Flow', () => {
     cy.get('.error').should('be.visible').and('contain', 'Could not find user');
     cy.url().should('not.include', '/landing');
   });
+
 });

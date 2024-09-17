@@ -1,5 +1,8 @@
 describe('Create Event User Flow', () => {
-
+  const url = 'http://localhost:5173'
+  beforeEach(() => {
+    cy.visit(url)
+  })
   it('should navigate to the Create Event page from My Events', () => {
     cy.visit('http://localhost:5173/landing')
     cy.get('.bttn-box').contains('Create Event').click()
@@ -39,5 +42,11 @@ describe('Create Event User Flow', () => {
     cy.url().should('include', '/allEventsPage')
     cy.get('h2').contains('All Events')
   })
-
+  it.only('should get an error message if user doesnt select all fields', () => {
+    cy.visit(`${url}/landing`)
+    cy.get('.bttn-box p').first().click()
+    cy.get('.artist-card').first().click()
+    cy.get('button').contains('Create Event').click()
+    cy.get('.form-error').should('be.visible')
+  })
 })

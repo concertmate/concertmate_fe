@@ -1,30 +1,33 @@
-
-
 .friends-list {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    background-color: rgb(26, 26, 26);
-    height: 40rem;
+    width: 50rem;
+    background-color: rgba(26, 26, 26,.3);
+    height: 42rem;
     border-bottom: 0.5rem;
+    border-radius: .5rem;
+    margin: 1.25rem;
+    overflow: auto;
+}
+.friends-wrapper {
+  background-color: rgba(33, 33, 33, 0.85);
+  width: 85%;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30em;
 }
 
-.friend-card-wrapper {
-    width: 70%;
-    height: 50%;
-    background-color: rgb(40, 40, 40);
-  }
-  
-  .friend-card {
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  }
-  
-  .friend-card.fade-slide-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
+.friend-card {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.friend-card.fade-slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}

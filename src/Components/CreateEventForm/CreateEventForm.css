@@ -1,0 +1,9 @@
+form h3 {
+    text-align: center;
+    margin-bottom: 0;
+}
+.form-error {
+    text-align: center;
+    color: red;
+    margin: 0;
+}

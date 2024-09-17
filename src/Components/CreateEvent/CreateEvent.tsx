@@ -4,6 +4,7 @@ import './CreateEvent.css'
 import {User} from '../../data/type.js'
 import CreateEventForm from '../CreateEventForm/CreateEventForm.tsx'
 import ArtistShows from '../ArtistShows/ArtistShows.js'
+
 interface CreateEventProps {
   user: User
 }
@@ -23,7 +24,7 @@ const CreateEvent: React.FC<CreateEventProps> = ({user}) => {
   }
   return (
     <div className='create-event-wrapper'>
-        <CreateEventForm user={user} selectedArtistIndex={selectedArtistIndex} showOption={showOption} selectedArtist={selectedArtist}/>
+        <CreateEventForm user={user} selectedArtistIndex={selectedArtistIndex} showOption={showOption}/>
         {selectedArtist && <ArtistShows user={user} artistName={selectedArtist} 
         handleSingleArtistSelection={handleSingleArtistSelection} selectedArtistIndex={selectedArtistIndex}
         showOption={showOption} handleShowOption={handleShowOption}/>}

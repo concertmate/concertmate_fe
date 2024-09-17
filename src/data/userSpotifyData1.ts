@@ -10,7 +10,7 @@ interface spotifyArtist {
   type: string;
   uri: string;
 }
-export const data: [spotifyArtist[], spotifyArtist[], spotifyArtist[], spotifyArtist[]] =
+export const data: spotifyArtist[][] =
   [
     [
       {
@@ -316,6 +316,230 @@ export const data: [spotifyArtist[], spotifyArtist[], spotifyArtist[], spotifyAr
         "popularity": 94,
         "type": "artist",
         "uri": "spotify:artist:4q3ewBCX7sLwd24euuV69X"
+      }
+    ],
+    [{
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5nki7yRhxgM509M5ADlN1p"
+      },
+      "followers": {
+        "href": null,
+        "total": 1037144
+      },
+      "genres": ["edm", "electro house", "future house", "house", "pop dance", "progressive electro house", "progressive house"],
+      "href": "https://api.spotify.com/v1/artists/5nki7yRhxgM509M5ADlN1p?locale=en-US%2Cen%3Bq%3D0.9",
+      "id": "5nki7yRhxgM509M5ADlN1p",
+      "images": [
+        {
+          "url": "https://i.scdn.co/image/ab6761610000e5ebe0de3617061247aa35ff7865",
+          "height": 640,
+          "width": 640
+        },
+        {
+          "url": "https://i.scdn.co/image/ab67616100005174e0de3617061247aa35ff7865",
+          "height": 320,
+          "width": 320
+        },
+        {
+          "url": "https://i.scdn.co/image/ab6761610000f178e0de3617061247aa35ff7865",
+          "height": 160,
+          "width": 160
+        }
+      ],
+      "name": "Oliver Heldens",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:5nki7yRhxgM509M5ADlN1p"
+    },{
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4oLeXFyACqeem2VImYeBFe"
+      },
+      "followers": {
+        "href": null,
+        "total": 1681439
+      },
+      "genres": [
+        "edm",
+        "house",
+        "stutter house"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4oLeXFyACqeem2VImYeBFe?locale=en-US%2Cen%3Bq%3D0.9",
+      "id": "4oLeXFyACqeem2VImYeBFe",
+      "images": [
+        {
+          "url": "https://i.scdn.co/image/ab6761610000e5eb2302e6ba3091fcbc6fd5bb54",
+          "height": 640,
+          "width": 640
+        },
+        {
+          "url": "https://i.scdn.co/image/ab676161000051742302e6ba3091fcbc6fd5bb54",
+          "height": 320,
+          "width": 320
+        },
+        {
+          "url": "https://i.scdn.co/image/ab6761610000f1782302e6ba3091fcbc6fd5bb54",
+          "height": 160,
+          "width": 160
+        }
+      ],
+      "name": "Fred again..",
+      "popularity": 81,
+      "type": "artist",
+      "uri": "spotify:artist:4oLeXFyACqeem2VImYeBFe"
+    }],[
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/5R3Hr2cnCCjt220Jmt2xLf"
+        },
+        "followers": {
+          "href": null,
+          "total": 1144231
+        },
+        "genres": [
+          "brostep",
+          "edm",
+          "electro house",
+          "moombahton",
+          "pop dance",
+          "progressive electro house",
+          "slap house"
+        ],
+        "href": "https://api.spotify.com/v1/artists/5R3Hr2cnCCjt220Jmt2xLf?locale=en-US%2Cen%3Bq%3D0.9",
+        "id": "5R3Hr2cnCCjt220Jmt2xLf",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5eb7a10c0a271f96529bf28f97f",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab676161000051747a10c0a271f96529bf28f97f",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f1787a10c0a271f96529bf28f97f",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Dillon Francis",
+        "popularity": 62,
+        "type": "artist",
+        "uri": "spotify:artist:5R3Hr2cnCCjt220Jmt2xLf"
+      },{
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/7CajNmpbOovFoOoasH2HaY"
+        },
+        "followers": {
+          "href": null,
+          "total": 22848606
+        },
+        "genres": [
+          "dance pop",
+          "edm",
+          "electro house",
+          "house",
+          "pop",
+          "progressive house",
+          "uk dance"
+        ],
+        "href": "https://api.spotify.com/v1/artists/7CajNmpbOovFoOoasH2HaY?locale=en-US%2Cen%3Bq%3D0.9",
+        "id": "7CajNmpbOovFoOoasH2HaY",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5eb014a3c1730d960c66396ed63",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174014a3c1730d960c66396ed63",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178014a3c1730d960c66396ed63",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Calvin Harris",
+        "popularity": 87,
+        "type": "artist",
+        "uri": "spotify:artist:7CajNmpbOovFoOoasH2HaY"
+      }
+    ],[
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/2RdwBSPQiwcmiDo9kixcl8"
+        },
+        "followers": {
+          "href": null,
+          "total": 4769627
+        },
+        "genres": [
+          "dance pop",
+          "pop"
+        ],
+        "href": "https://api.spotify.com/v1/artists/2RdwBSPQiwcmiDo9kixcl8?locale=en-US%2Cen%3Bq%3D0.9",
+        "id": "2RdwBSPQiwcmiDo9kixcl8",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5ebf0789cd783c20985ec3deb4e",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174f0789cd783c20985ec3deb4e",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178f0789cd783c20985ec3deb4e",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Pharrell Williams",
+        "popularity": 81,
+        "type": "artist",
+        "uri": "spotify:artist:2RdwBSPQiwcmiDo9kixcl8"
+      },{
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/53XhwfbYqKCa1cC15pYq2q"
+        },
+        "followers": {
+          "href": null,
+          "total": 54492490
+        },
+        "genres": [
+          "modern rock",
+          "pop",
+          "rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/53XhwfbYqKCa1cC15pYq2q?locale=en-US%2Cen%3Bq%3D0.9",
+        "id": "53XhwfbYqKCa1cC15pYq2q",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5ebab47d8dae2b24f5afe7f9d38",
+            "height": 640,
+            "width": 640
+          },
+          {
+            "url": "https://i.scdn.co/image/ab67616100005174ab47d8dae2b24f5afe7f9d38",
+            "height": 320,
+            "width": 320
+          },
+          {
+            "url": "https://i.scdn.co/image/ab6761610000f178ab47d8dae2b24f5afe7f9d38",
+            "height": 160,
+            "width": 160
+          }
+        ],
+        "name": "Imagine Dragons",
+        "popularity": 88,
+        "type": "artist",
+        "uri": "spotify:artist:53XhwfbYqKCa1cC15pYq2q"
       }
     ]
   ]

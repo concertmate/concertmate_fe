@@ -1,14 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginPage.css'
-import { user } from '../../data/userData.ts'
-
-interface User {
-  id: number;
-  username: string;
-  email: string;
-  password: string;
-}
+import { getAllUsers } from '../../APICall.tsx';
+import { User } from '../../data/type.ts';
 
 interface LoginPageProps {
   handleAuthentication: (isAuthenticated: boolean) => void;
@@ -24,8 +18,9 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser})
     setIsLoggingIn(true)
   }
 
-  const handleFormSubmit = () => {
-    const foundUser = user.find((u) => u.email === email);
+  async function handleFormSubmit() {
+    let response = await getAllUsers();
+    const foundUser = response.data.find(({attributes}:{attributes:User}) => attributes.email === email);
     if (foundUser) {
       changeUser(foundUser)
       navigate('/landing');
