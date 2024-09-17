@@ -17,19 +17,6 @@ describe('Create Event User Flow', () => {
     cy.get('.artist-card').should('have.length', 2)
   })
 
-  // it('should allow the user to select an artist, view shows, and create an event', () => {
-  //   cy.visit('http://localhost:5173/createEvent')
-  //   cy.get('.artist-card').first().click()
-  //   cy.get('.show-card').should('be.visible')
-  //   cy.get('.show-card').contains('Upcoming Shows')
-  //   cy.get('.concert-card').should('have.length.greaterThan', 0)
-  //   cy.get('input[type="text"]').type('My Concert Event')
-  //   cy.get('input[type="radio]').first().check()
-  //   cy.get('form').submit()
-  //   cy.url().should('include', '/myEvents')
-  //   cy.contains('My Events').should('be.visible')
-  // })
-
   it('should display a message when no shows are available', () => {
     cy.visit('http://localhost:5173/createEvent')
     cy.get('.artist-card').contains('Foo Fighters').click()
@@ -43,10 +30,13 @@ describe('Create Event User Flow', () => {
     cy.get('h2').contains('All Events')
   })
   it.only('should get an error message if user doesnt select all fields', () => {
-    cy.visit(`${url}/landing`)
-    cy.get('.bttn-box p').first().click()
-    cy.get('.artist-card').first().click()
-    cy.get('button').contains('Create Event').click()
-    cy.get('.form-error').should('be.visible')
+    cy.visit(`${url}`)
+    cy.get('button').click()
+    cy.get('input').type('kylemboomer@gmail.com')
+    cy.get('button').click()
+    // cy.get('.bttn-box p').first().click()
+    // cy.get('.artist-card').first().click()
+    // cy.get('button').contains('Create Event').click()
+    // cy.get('.form-error').should('be.visible')
   })
 })

@@ -5,7 +5,7 @@ import './ArtistShows.css'
 
 interface ArtistShowProps {
     user: User;
-    artistName: React.ReactNode;
+    artistName: string;
     handleSingleArtistSelection: (artistSelection: number) => void;
     selectedArtistIndex: number;
     showOption: number;
@@ -22,8 +22,8 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
             }
         })
     }, [artistName])
-
-    const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter(artist => artist.name === artistName)
+    const firstName = artistName.split(' ')[0]
+    const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter((show) => show.name.includes(firstName))
     if (!shows.length) {
         return (
             <p>No concerts available for {artistName}. Try another artist, or check back soon!</p>

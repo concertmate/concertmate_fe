@@ -11,7 +11,6 @@ interface CreateEventFormProps {
 const CreateEventForm: React.FC<CreateEventFormProps> = ({user, selectedArtistIndex, showOption}) => {
   const [eventName, setEventName] = useState<string>('')
   const [formError, setFormError] = useState<boolean>(false);
-
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     const {id} = user
