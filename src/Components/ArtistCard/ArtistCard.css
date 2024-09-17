@@ -1,12 +1,13 @@
 .artist-card {
     display: flex;
-    width: 25rem;
-    height: auto;
+    width: 35rem;
+    height: 10rem;
     border: 1px solid black;
     margin: 1rem;
     cursor: pointer;
     background-color: rgb(42, 42, 42);
     justify-content: space-around;
+    padding: .2rem;
 }
 
 .artist-card p {
@@ -16,22 +17,33 @@
 .genre-container {
     display: flex;
     flex-wrap: wrap;
-    width: 10rem;
+    width: 25rem;
+    height: 5rem;
 }
 
 .genre-tag {
     color: white;
     background-color: rgb(26,26,26);
     border-radius: .5rem;
-    margin: .2rem;
+    width: fit-content;
+    height: fit-content;
+    padding: .3rem;
+    margin-right: .5rem;
 }
+
 .artist-img-container {
+    align-self: center;
     display: flex;
-    width: 10rem;
+    width: 9rem;
+    height: 9rem;
     border: 1px solid black;
     border-radius: 100%;
     overflow: hidden;
     img {
         width: 100%;
     }
+}
+
+.artist-info-container {
+    width: 18.5rem;
 }

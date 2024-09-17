@@ -20,11 +20,10 @@ const ArtistCard: React.FC<ArtistCardProps> = ({ user, onArtistClick }) => {
           <div className='artist-img-container'>
             <img src={images[2].url} alt={name} />
           </div>
-        <div><p>{name}</p>
+        <div className='artist-info-container'>
+          <p>{name}</p>
         <div className='genre-container'>{genres.slice(0,5).map((genre, index) => (
-          <div key={index}>
-            <div className='genre-tag'>{genre}</div>
-          </div>
+          <div key={index}className='genre-tag'>{genre}</div>
         ))}</div>
         </div>
       </div>
