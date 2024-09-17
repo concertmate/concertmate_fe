@@ -14,7 +14,7 @@ interface ArtistShowProps {
 
 const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingleArtistSelection, selectedArtistIndex, showOption, handleShowOption }) => {
     const { id } = user
-    const tmData = tmData1[id - 1]
+    const tmData = tmData1[id - 34]
     useEffect(() => {
         tmData.forEach((artistData, index) => {
             if (artistData.find((artist) => artist.name === artistName)) {
@@ -22,7 +22,6 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
             }
         })
     }, [artistName])
-
 
     const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter(artist => artist.name === artistName)
     if (!shows.length) {
