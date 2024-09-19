@@ -6,13 +6,14 @@ import { User } from '../../data/type';
 
 interface LandingPageProps {
   loggedInUser: User;
+  filteredUsers: User[]
 }
 
-const LandingPage: React.FC<LandingPageProps> = ({ loggedInUser }) => {
+const LandingPage: React.FC<LandingPageProps> = ({ loggedInUser, filteredUsers}) => {
   return (
     <div className="landing-page">
       <MyEvents user={loggedInUser}/>
-      <FriendsList loggedInUser={loggedInUser} />
+      <FriendsList filteredUsers={filteredUsers}/>
     </div>
   );
 };

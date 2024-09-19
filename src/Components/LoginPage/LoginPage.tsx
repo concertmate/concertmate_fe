@@ -7,9 +7,10 @@ import { User } from '../../data/type.ts';
 interface LoginPageProps {
   handleAuthentication: (isAuthenticated: boolean) => void;
   changeUser: (user: User) => void;
+  changeFilteredUsers: (users: User[]) => void;
 }
 
-const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser}) => {
+const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser, changeFilteredUsers}) => {
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
@@ -20,20 +21,20 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser})
 
   async function handleFormSubmit() {
     let response = await getAllUsers();
-    const foundUser = response.data.find(({attributes}:{attributes:User}) => attributes.email === email);
+    const foundUser = response.data.find((user:User) => user.attributes.email === email);
+    const filteredUsers = response.data.filter((user:User) => user.id !== foundUser.id)
     if (foundUser) {
       changeUser(foundUser)
+      changeFilteredUsers(filteredUsers)
       setTimeout(() => {
         navigate('/landing');
       },300)
       handleAuthentication(true);
     } else {
       setError('Could not find user');
-
       const errorTimeout = setTimeout(() => {
         setError('');
       }, 3000);
-      
       return () => clearTimeout(errorTimeout);
     }
   };

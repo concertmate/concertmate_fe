@@ -8,17 +8,14 @@ import * as moment from 'moment'
 
 interface MyEventsProps {
   user:User;
-  changeUserEventIDs:(ids: string[]) => void;
 }
 
-const MyEvents:React.FC<MyEventsProps> = ({user,changeUserEventIDs}) => {
+const MyEvents:React.FC<MyEventsProps> = ({user}) => {
   const [myevents, setMyEvents] = useState<Event[]>([])
   const {id} = user
   useEffect(() => {
     getUserEvents(id)
     .then(data => {
-      const ids = data.data.map((data:Event) => data.id)
-      changeUserEventIDs(ids)
       setMyEvents(data.data)})
     .catch(err => console.log(err))
   },[])
@@ -26,7 +23,6 @@ const MyEvents:React.FC<MyEventsProps> = ({user,changeUserEventIDs}) => {
     const date = new Date(event.attributes.date_time)
     event.attributes.newDate = moment.default(date).format('MMM-DD-YYYY');
     return (
-    <Link to={`/eventPage/${event.id}`}>
       <div key={event.id} className='event-card'>
         <h3>{event.attributes.event_name}</h3>
         <p>Artist: {event.attributes.artist}</p>
@@ -34,7 +30,6 @@ const MyEvents:React.FC<MyEventsProps> = ({user,changeUserEventIDs}) => {
         <p>Location: {event.attributes.location}</p>
         <p>Date: {event.attributes.newDate}</p>   
       </div>
-    </Link>
   )})
   return (
     <div className='my-event-widget'>

@@ -18,10 +18,13 @@ export interface UserAuthentication {
 
 export interface User {
     id: number;
-    name: string;
-    email: string;
-    created_at:string;
-    updated_at:string;
+    type: string;
+    attributes: {
+        email: string;
+        created_at:string;
+        updated_at:string;
+        name: string;
+    }
 }
 
 export interface TicketmasterShow {
