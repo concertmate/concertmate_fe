@@ -3,14 +3,18 @@ import { getCommunityEvents } from '../../APICall'
 import { useState, useEffect } from 'react'
 import { Event } from '../../data/type'
 import { User } from '../../data/type'
-const AllEventsPage = ({user}:{user:User}) => {
+const AllEventsPage = ({user,userEventIDs}:{user:User, userEventIDs:string[]}) => {
 
 const [events, setEvents] = useState<Event[]>([])
   useEffect(() => {
     getCommunityEvents()
-    .then(data => setEvents(data.data))
+    .then(data => {
+      console.log(data.data)
+      setEvents(data.data)})
     .catch(err => console.log(err))
   },[])
+  console.log(userEventIDs)
+  //  const filteredEvents = events.filter(event => event. !== )
   const allEvents = events.map((event) => (
     <div key={event.id} className='event-card'>
       <h3>{event.attributes.event_name}</h3>

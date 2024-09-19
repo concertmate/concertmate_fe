@@ -25,7 +25,7 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser})
       changeUser(foundUser)
       setTimeout(() => {
         navigate('/landing');
-      },)
+      },300)
       handleAuthentication(true);
     } else {
       setError('Could not find user');
