@@ -27,7 +27,7 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
     const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter((show) => show.name.includes(firstName))
     const dateShows = shows.map(show => {
         const date = new Date(show.startDate)
-        show.newDate= moment.default(date).format('MMM-DD-YYYY');
+        show.newDate = moment.default(date).format('MMM-DD-YYYY');
         return {...show}
     })
 

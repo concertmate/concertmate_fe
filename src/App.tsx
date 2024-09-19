@@ -9,6 +9,7 @@ import FriendsList from './Components/FriendsList/FriendsList.js'
 import EventPage from './Components/EventPage/EventPage.js'
 import SingleFriendPage from './Components/SingleFriendPage/SingleFriendPage.js'
 import ArtistPage from './Components/ArtistPage/ArtistPage.js'
+import AllEventsPage from './Components/AllEventsPage/AllEventsPage.js'
 import React, { useState } from 'react'
 import {User} from './data/type.js'
 
@@ -36,6 +37,7 @@ const App = () => {
           />
         <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
         <Route path='/myevents' element={<MyEvents />}/>
+        <Route path='/allEventsPage' element={<AllEventsPage />}/>
         <Route path='/friendslist' element={<FriendsList loggedInUser={user}/>}/>
         <Route path='/eventPage/:eventId' element={<EventPage />} />
         <Route path='/singleFriend/:id' element={<SingleFriendPage />} />

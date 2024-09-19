@@ -24,18 +24,6 @@ export interface User {
     updated_at:string;
 }
 
-export interface Show {
-    id:number
-    name:string
-    date:string
-    venue:string
-    startDate:string
-    image:string
-    location:string
-    url:string
-    performer:{name:string}[]
-}
-
 export interface TicketmasterShow {
     "@context": string;
     "@type": string;
@@ -102,4 +90,10 @@ export type PostEvent = {
     artist: string;
     location: string;
     user_id: number;
+}
+
+export interface CommunityEvent {
+    id: string,
+    type: string,
+    attributes: {venue_name: string, event_name: string, date_time: string, artist: string, location: string}
 }

@@ -14,7 +14,7 @@ const MyEvents = () => {
 
         <div className='bttn-box'>
           <Link to='/createEvent'> <p>Create Event</p></Link>
-          <Link to='/allEventsPage'> <p>My Events</p></Link>
+          <Link to='/allEventsPage'> <p>Community Events</p></Link>
         </div>
         
       </div>
