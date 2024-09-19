@@ -1,5 +1,4 @@
 import { PostEvent } from "./data/type"
-//https://concertmate-be-914112705dc5.herokuapp.com/api/users/1/events
 interface Props {
     id: number;
     userEvent: PostEvent;
@@ -30,7 +29,7 @@ export const getAllUsers = () => {
   })
 }
 
-export const getUserEvents = ({id}:{id:number}) => {
+export const getUserEvents = (id:number) => {
     const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
     return fetch(`${baseURL}api/v1/users/${id}/user_events`)
     .then(resp => {
@@ -39,4 +38,15 @@ export const getUserEvents = ({id}:{id:number}) => {
       }
       return resp.json()
     })
+}
+
+export const getCommunityEvents = () => {
+   const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
+   return fetch(`${baseURL}api/v1/events`)
+   .then(resp => {
+    if (!resp.ok) {
+      throw new Error ('could not fetch')
+    }
+    return resp.json()
+  })
 }

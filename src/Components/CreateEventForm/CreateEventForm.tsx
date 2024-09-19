@@ -11,7 +11,6 @@ interface CreateEventFormProps {
 const CreateEventForm: React.FC<CreateEventFormProps> = ({user, selectedArtistIndex, showOption}) => {
   const [eventName, setEventName] = useState<string>('')
   const [formError, setFormError] = useState<boolean>(false);
-
   function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
     const {id} = user
@@ -49,7 +48,7 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({user, selectedArtistIn
   return (
     <div className='form-wrapper'>
       <form >
-        <h3>Create Event</h3>
+        <h2>Create Event</h2>
         <p className='form-error'style={{visibility: formError? 'visible' : 'hidden'}}>Select all event properties</p>
         <label htmlFor='event-name'></label>
         <input placeholder='Event Name' id='event-name'type='text' name='event-name' onChange={(e) => setEventName(e.target.value)}/>

@@ -23,3 +23,22 @@
     opacity: 0;
 }
 
+.show-artist-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .show-artist-container {
+    width: 80%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    h2 {
+      text-align: center;
+    }
+  }
+}

@@ -24,18 +24,6 @@ export interface User {
     updated_at:string;
 }
 
-export interface Show {
-    id:number
-    name:string
-    date:string
-    venue:string
-    startDate:string
-    image:string
-    location:string
-    url:string
-    performer:{name:string}[]
-}
-
 export interface TicketmasterShow {
     "@context": string;
     "@type": string;
@@ -43,7 +31,7 @@ export interface TicketmasterShow {
     name: string;
     description: string;
     image: string;
-    startDate: string;
+    startDate: Date | string;
     endDate: string;
     eventStatus: string;
     eventAttendanceMode: string;
@@ -77,22 +65,23 @@ export interface TicketmasterShow {
         "@type": string;
         name: string;
         sameAs: string;
-    }[]
+    }[],
+    newDate?: string | React.ReactNode
 }
 export interface ArtistName {
     artistName:string|React.ReactNode
 }
-export type Event = {
-    event_id: number;
-    event_name: string;
-    venue_name: string;
-    date_time: string;
-    artist: string;
-    location: string;
-    spotify_artist_id: string;
-    ticketmaster_event_id: string;
-    owner: string;
-}
+// export type Event = {
+//     event_id: number;
+//     event_name: string;
+//     venue_name: string;
+//     date_time: string;
+//     artist: string;
+//     location: string;
+//     spotify_artist_id: string;
+//     ticketmaster_event_id: string;
+//     owner: string;
+// }
 
 export type PostEvent = {
     event_name: string;
@@ -101,4 +90,10 @@ export type PostEvent = {
     artist: string;
     location: string;
     user_id: number;
+}
+
+export interface Event {
+    id: string,
+    type: string,
+    attributes: {venue_name: string, event_name: string, date_time: string, artist: string, location: string,newDate?:string|React.ReactNode}
 }

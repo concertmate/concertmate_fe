@@ -2,10 +2,11 @@ import { useEffect } from 'react'
 import { tmData1 } from '../../data/TicketMasterData1'
 import { User, TicketmasterShow } from '../../data/type'
 import './ArtistShows.css'
+import * as moment from 'moment'
 
 interface ArtistShowProps {
     user: User;
-    artistName: React.ReactNode;
+    artistName: string;
     handleSingleArtistSelection: (artistSelection: number) => void;
     selectedArtistIndex: number;
     showOption: number;
@@ -22,8 +23,14 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
             }
         })
     }, [artistName])
+    const firstName = artistName.split(' ')[0]
+    const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter((show) => show.name.includes(firstName))
+    const dateShows = shows.map(show => {
+        const date = new Date(show.startDate)
+        show.newDate = moment.default(date).format('MMM-DD-YYYY');
+        return {...show}
+    })
 
-    const shows: TicketmasterShow[] = tmData[selectedArtistIndex].filter(artist => artist.name === artistName)
     if (!shows.length) {
         return (
             <p>No concerts available for {artistName}. Try another artist, or check back soon!</p>
@@ -31,14 +38,16 @@ const ArtistShows: React.FC<ArtistShowProps> = ({ user, artistName, handleSingle
     }
     return (
         <div className='show-card-wrapper'>
-            <h3>Upcoming Shows for {artistName}</h3>
+            <h2>Upcoming Shows for {artistName}</h2>
             <div className='concert-wrapper'>
-                {shows.map((show, index) => (
-                <div key={index} className='concert-card'>
-                    <img src={show.image} alt={show.name} />
+                {dateShows.map((show, index) => (
+                <div key={index} className='concert-card' onClick={() => handleShowOption(index)}>
+                    <div className='concert-img-container'>
+                        <img src={show.image} alt={show.name} />
+                    </div>
                     <div className='concert-info'>
                         <p>{artistName}</p>
-                        <p>{show.startDate}</p>
+                        <p>{show.newDate}</p>
                         <p>{show.location.name}</p>
                         <a href={show.url} target="_blank" rel="noopener noreferrer">
                             More Details Here

@@ -1,12 +1,16 @@
 .event-card {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 5rem;
+    width: 40rem;
+    height: 15rem;
     margin: 1rem 0;
     padding: 1em;
     background-color: rgb(26, 26, 26);
     border-radius: .5rem;
     box-sizing: border-box;
+    p {
+        margin: 0;
+    }
 }

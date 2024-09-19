@@ -1,22 +1,28 @@
 import './AllEventsPage.css'
+import { getCommunityEvents } from '../../APICall'
+import { useState, useEffect } from 'react'
+import { Event } from '../../data/type'
+import { User } from '../../data/type'
+const AllEventsPage = ({user}:{user:User}) => {
 
-
-const AllEventsPage = () => {
-
-  // const allEvents = events.map((event) => (
-  //   <div key={event.event_id} className='event-card'>
-  //     <h3>{event.event_name}</h3>
-  //     <p>Artist: {event.artist}</p>
-  //     <p>Venue: {event.venue_name}</p>
-  //     <p>Location: {event.location}</p>
-  //     <p>Date & Time: {event.date_time}</p>
-  //   </div>
-  // ))
-
+const [events, setEvents] = useState<Event[]>([])
+  useEffect(() => {
+    getCommunityEvents()
+    .then(data => setEvents(data.data))
+    .catch(err => console.log(err))
+  },[])
+  const allEvents = events.map((event) => (
+    <div key={event.id} className='event-card'>
+      <h3>{event.attributes.event_name}</h3>
+      <p>Artist: {event.attributes.artist}</p>
+      <p>Venue: {event.attributes.venue_name}</p>
+      <p>Location: {event.attributes.location}</p>
+      <p>Date & Time: {event.attributes.date_time}</p>   
+    </div>
+  ))
   return (
     <div className='all-events-page'>
-      <h2>All Events</h2>
-
+      {events.length && allEvents}
     </div>
   )
 }
