@@ -29,7 +29,7 @@ export const getAllUsers = () => {
   })
 }
 
-export const getUserEvents = ({id}:{id:number}) => {
+export const getUserEvents = (id:number) => {
     const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
     return fetch(`${baseURL}api/v1/users/${id}/user_events`)
     .then(resp => {

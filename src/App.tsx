@@ -36,8 +36,8 @@ const App = () => {
             element={<LandingPage loggedInUser={user} />} 
           />
         <Route path='/createEvent' element={<CreateEvent user={user}/>}/>
-        <Route path='/myevents' element={<MyEvents />}/>
-        <Route path='/allEventsPage' element={<AllEventsPage />}/>
+        <Route path='/myevents' element={<MyEvents user={user}/>}/>
+        <Route path='/allEventsPage' element={<AllEventsPage user={user}/>}/>
         <Route path='/friendslist' element={<FriendsList loggedInUser={user}/>}/>
         <Route path='/eventPage/:eventId' element={<EventPage />} />
         <Route path='/singleFriend/:id' element={<SingleFriendPage />} />

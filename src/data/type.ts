@@ -71,17 +71,17 @@ export interface TicketmasterShow {
 export interface ArtistName {
     artistName:string|React.ReactNode
 }
-export type Event = {
-    event_id: number;
-    event_name: string;
-    venue_name: string;
-    date_time: string;
-    artist: string;
-    location: string;
-    spotify_artist_id: string;
-    ticketmaster_event_id: string;
-    owner: string;
-}
+// export type Event = {
+//     event_id: number;
+//     event_name: string;
+//     venue_name: string;
+//     date_time: string;
+//     artist: string;
+//     location: string;
+//     spotify_artist_id: string;
+//     ticketmaster_event_id: string;
+//     owner: string;
+// }
 
 export type PostEvent = {
     event_name: string;
@@ -92,8 +92,8 @@ export type PostEvent = {
     user_id: number;
 }
 
-export interface CommunityEvent {
+export interface Event {
     id: string,
     type: string,
-    attributes: {venue_name: string, event_name: string, date_time: string, artist: string, location: string}
+    attributes: {venue_name: string, event_name: string, date_time: string, artist: string, location: string,newDate?:string|React.ReactNode}
 }

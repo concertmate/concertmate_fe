@@ -11,7 +11,7 @@ interface LandingPageProps {
 const LandingPage: React.FC<LandingPageProps> = ({ loggedInUser }) => {
   return (
     <div className="landing-page">
-      <MyEvents />
+      <MyEvents user={loggedInUser}/>
       <FriendsList loggedInUser={loggedInUser} />
     </div>
   );

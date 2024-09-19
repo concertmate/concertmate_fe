@@ -1,10 +1,11 @@
 import './AllEventsPage.css'
 import { getCommunityEvents } from '../../APICall'
 import { useState, useEffect } from 'react'
-import { CommunityEvent } from '../../data/type'
-const AllEventsPage = () => {
+import { Event } from '../../data/type'
+import { User } from '../../data/type'
+const AllEventsPage = ({user}:{user:User}) => {
 
-const [events, setEvents] = useState<CommunityEvent[]>([])
+const [events, setEvents] = useState<Event[]>([])
   useEffect(() => {
     getCommunityEvents()
     .then(data => setEvents(data.data))
@@ -16,7 +17,7 @@ const [events, setEvents] = useState<CommunityEvent[]>([])
       <p>Artist: {event.attributes.artist}</p>
       <p>Venue: {event.attributes.venue_name}</p>
       <p>Location: {event.attributes.location}</p>
-      <p>Date & Time: {event.attributes.date_time}</p>
+      <p>Date & Time: {event.attributes.date_time}</p>   
     </div>
   ))
   return (

@@ -23,7 +23,9 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser})
     const foundUser = response.data.find(({attributes}:{attributes:User}) => attributes.email === email);
     if (foundUser) {
       changeUser(foundUser)
-      navigate('/landing');
+      setTimeout(() => {
+        navigate('/landing');
+      },)
       handleAuthentication(true);
     } else {
       setError('Could not find user');
