@@ -78,7 +78,28 @@ export const joinEvent = ({user_id, event_id}:JoinProps) => {
       return resp.json()
   })
 }
+export const getEventAttendees = ({event_id}:{event_id:number}) => {
+   const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
+   return fetch(`${baseURL}api/v1/attendees?event_id=${event_id}`)
+   .then(resp => {
+    if (!resp.ok) {
+      throw new Error ('could not fetch')
+    }
+    return resp.json()
+  })
+}
 
-export const leaveEvent = ({user_id, event_id}:LeaveProps) => {
-
+export const leaveEvent = ({attendee_id}:{attendee_id:string}) => {
+  console.log(attendee_id)
+   const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
+  return fetch(`${baseURL}api/v1/attendees/${attendee_id}`, {
+    method: 'DELETE'
+  })
+  .then(resp => {
+    console.log(resp)
+    if (!resp.ok) {
+      throw new Error ('could not fetch')
+    }
+    return resp.json()
+  })
 }

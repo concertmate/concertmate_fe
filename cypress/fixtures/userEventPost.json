@@ -31,5 +31,16 @@
             "artist": "Modest Mouse: Good News For People Who Love Bad News Anniversary Tour",
             "location": "911 Pine St Seattle,WA 98101"
         }
+    },
+    {
+        "id": "167",
+        "type": "event",
+        "attributes": {
+            "event_name": "test",
+            "venue_name": "Paramount Theatre",
+            "date_time": "2024-10-30T20:00:00",
+            "location": "911 Pine StSeattle,WA 98101",
+            "artist": "Modest Mouse"
+        }
     }
 ]}

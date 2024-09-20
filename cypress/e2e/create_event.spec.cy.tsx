@@ -1,5 +1,5 @@
 describe('Create Event User Flow', () => {
-  const url = 'http://127.0.0.1:5173/'
+const url = 'http://127.0.0.1:5173/'
   let data;
   beforeEach(() => {
     cy.visit(url)
@@ -34,7 +34,7 @@ describe('Create Event User Flow', () => {
     cy.url().should('include', '/allEventsPage')
     cy.get('h2').contains('All Events')
   })
-  it.only('should get an error message if user doesnt select all fields', () => {
+  it('should be able to POST event and see updated events in my event', () => {
     cy.visit(`${url}`)
     cy.get('button').click()
     cy.get('input').type('kylemboomer@gmail.com')
@@ -62,9 +62,13 @@ describe('Create Event User Flow', () => {
       })
     })
     cy.get('button').contains('Create Event').click()
+    cy.fixture('userEventPost').then((json) => {
+      cy.intercept(`https://concertmate-rails-9f7aa871924c.herokuapp.com/api/v1/users/36/user_events`, {
+        statusCode: 200,
+        fixture: 'userEventPost.json'
+      })
+    })
     cy.get('.logo').click()
-    cy.get('.event-card').should('have.length',35)
-  
-    // cy.get('.form-error').should('be.visible')
+    cy.get('.event-card').should('have.length',4)
   })
 })

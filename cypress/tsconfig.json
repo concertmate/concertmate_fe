@@ -4,5 +4,5 @@
       "lib": ["es5", "dom"],
       "types": ["cypress", "node"]
     },
-    "include": ["**/*.ts"]
+    "include": ["**/*.ts", "e2e/create_event.spec.cy.tsx", "e2e/leave_and_join.spec.tsx"]
   }
