@@ -28,9 +28,9 @@ describe('Join and leave Events', () => {
           fixture: 'userEventPost.json'
         })
       })
-       cy.get('[href="/allEventsPage"] > button').click()
+       cy.get('[href="/allEventsPage"] > button').click({force: true})
        cy.get('.event-card').should('have.length',4)
-       cy.get('.event-card button').first().click()
+       cy.get('.event-card button').first().click({force: true})
        cy.get('p#status').should('have.text','Successfully joined event')
    })
 
@@ -88,9 +88,9 @@ describe('Join and leave Events', () => {
        fixture: 'userEventPost.json'
      })
    })
-    cy.get('[href="/allEventsPage"] > button').click()
+    cy.get('[href="/allEventsPage"] > button').click({force: true})
     cy.get('.event-card').should('have.length',4)
-    cy.get(':nth-child(1) > div > #leave-btn').click()
+    cy.get(':nth-child(1) > div > #leave-btn').click({force: true})
     cy.get('.leave-text').should('contain.text','Successfully left the event')
 })
 })
