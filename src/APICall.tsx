@@ -78,3 +78,7 @@ export const joinEvent = ({user_id, event_id}:JoinProps) => {
       return resp.json()
   })
 }
+
+export const leaveEvent = ({user_id, event_id}:LeaveProps) => {
+
+}
