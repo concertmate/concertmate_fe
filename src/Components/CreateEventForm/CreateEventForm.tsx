@@ -28,7 +28,7 @@ const CreateEventForm: React.FC<CreateEventFormProps> = ({user, selectedArtistIn
       venue_name: singleShowData.location.name,
       date_time: singleShowData.startDate,
       artist: singleShowData.name,
-      location: `${singleShowData.location.address.streetAddress}${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
+      location: `${singleShowData.location.address.streetAddress} ${singleShowData.location.address.addressLocality},${singleShowData.location.address.addressRegion} ${singleShowData.location.address.postalCode}`,
       user_id: id
     };
     const eventProperties = new Set(Object.values(userEvent))

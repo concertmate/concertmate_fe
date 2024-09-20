@@ -34,7 +34,7 @@ export interface TicketmasterShow {
     name: string;
     description: string;
     image: string;
-    startDate: Date | string;
+    startDate: string;
     endDate: string;
     eventStatus: string;
     eventAttendanceMode: string;
@@ -68,8 +68,7 @@ export interface TicketmasterShow {
         "@type": string;
         name: string;
         sameAs: string;
-    }[],
-    newDate?: string | React.ReactNode
+    }[]
 }
 export interface ArtistName {
     artistName:string|React.ReactNode
@@ -96,7 +95,17 @@ export type PostEvent = {
 }
 
 export interface Event {
-    id: string,
+    id: number;
     type: string,
     attributes: {venue_name: string, event_name: string, date_time: string, artist: string, location: string,newDate?:string|React.ReactNode}
+}
+
+export interface Attendee {
+        id: string
+        type: "attendee"
+        attributes: {
+            user_id: number,
+            event_id: number
+        }
+    
 }

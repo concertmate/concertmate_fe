@@ -21,10 +21,10 @@ const LoginPage:React.FC<LoginPageProps> = ({ handleAuthentication, changeUser, 
 
   async function handleFormSubmit() {
     let response = await getAllUsers();
-    const foundUser = response.data.find((user:User) => user.attributes.email === email);
-    const filteredUsers = response.data.filter((user:User) => user.id !== foundUser.id)
+    const foundUser = await response.data.find((user:User) => user.attributes.email === email);
     if (foundUser) {
       changeUser(foundUser)
+      const filteredUsers = response.data.filter((user:User) => user.id !== foundUser.id)
       changeFilteredUsers(filteredUsers)
       setTimeout(() => {
         navigate('/landing');

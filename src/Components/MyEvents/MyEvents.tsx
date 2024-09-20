@@ -21,21 +21,21 @@ const MyEvents:React.FC<MyEventsProps> = ({user}) => {
   },[])
   const userEvents = myevents.map((event) => {
     const date = new Date(event.attributes.date_time)
-    event.attributes.newDate = moment.default(date).format('MMM-DD-YYYY');
+    event.attributes.date_time = moment.default(date).format('MMM-DD-YYYY');
     return (
       <div key={event.id} className='event-card'>
         <h3>{event.attributes.event_name}</h3>
         <p>Artist: {event.attributes.artist}</p>
         <p>Venue: {event.attributes.venue_name}</p>
         <p>Location: {event.attributes.location}</p>
-        <p>Date: {event.attributes.newDate}</p>   
+        <p>Date: {event.attributes.date_time}</p>   
       </div>
   )})
   return (
     <div className='my-event-widget'>
       <h2>My Events</h2>
       <div className='event-wrapper'>
-        {myevents ? userEvents : <h3>You have no upcoming shows...</h3>}
+        {myevents.length ? userEvents : <h3>You have no upcoming shows...</h3>}
         <div className='bttn-box'>
           <Link to='/createEvent'> <button>Create Event</button></Link>
           <Link to='/allEventsPage'> <button>Community Events</button></Link>
