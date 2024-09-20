@@ -32,10 +32,6 @@ describe('Join and leave Events', () => {
        cy.get('.event-card').should('have.length',4)
        cy.get('.event-card button').first().click()
        cy.get('p#status').should('have.text','Successfully joined event')
-       cy.clock()
-       cy.tick(3000)
-      //  cy.get('[href="/allEventsPage"] > li').click()
-      //  cy.get('p.leave-text').should('have.text','Successfully left the event')
    })
 
    it (("user be able to leave an event, unless user is not found"),() => {
@@ -68,7 +64,7 @@ describe('Join and leave Events', () => {
     cy.get('p#status').should('have.text','Attendee not found')
    })
 
-   it.only(('user be able to leave an event'),() => {
+   it(('user be able to leave an event'),() => {
     cy.visit(`${url}`)
     cy.get('button').click()
     cy.get('input').type('kylemboomer@gmail.com')
