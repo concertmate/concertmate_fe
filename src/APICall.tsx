@@ -3,6 +3,10 @@ interface Props {
     id: number;
     userEvent: PostEvent;
 }
+interface JoinProps {
+  user_id: number | string;
+  event_id: number | string;
+}
 export const postUserEvent = ({id,userEvent}:Props) => {
    const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
    const newEvent = {event: userEvent}
@@ -48,5 +52,29 @@ export const getCommunityEvents = () => {
       throw new Error ('could not fetch')
     }
     return resp.json()
+  })
+}
+
+export const joinEvent = ({user_id, event_id}:JoinProps) => {
+     const baseURL = 'https://concertmate-rails-9f7aa871924c.herokuapp.com/'
+     const joinAttendee = {
+      'attendee': {
+        'user_id':user_id,
+        'event_id':event_id
+      }
+     }
+     return fetch(`${baseURL}api/v1/attendees`,{
+      method:'POST',
+      headers: {
+        'Content-Type':'application/json'
+      },
+      body: JSON.stringify(joinAttendee)
+     })
+    .then(resp => {
+      console.log(resp)
+      if (!resp.ok) {
+        throw new Error ('could not fetch')
+      }
+      return resp.json()
   })
 }
