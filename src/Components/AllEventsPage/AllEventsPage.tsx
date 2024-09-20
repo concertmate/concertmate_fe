@@ -73,7 +73,7 @@ const AllEventsPage = ({user}:{user:User}) => {
   return (
     <div className='all-events-page'>
      {status && <p id='status'style={{color: 'green'}}>Successfully joined event</p>}
-     {leaveStatus && <p id='status'style={{color: 'green'}}>Successfully left the event</p>}
+     {leaveStatus && <p className='leave-text' id='status'style={{color: 'green'}}>Successfully left the event</p>}
      {errorLeave && <p id='status'style={{color: 'red'}}>Attendee not found</p>}
       {events.length && allEvents}
     </div>

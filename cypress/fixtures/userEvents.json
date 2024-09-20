@@ -1,0 +1,35 @@
+{"data": [
+    {
+        "id": "67",
+        "type": "event",
+        "attributes": {
+            "venue_name": "The Republik",
+            "event_name": "test",
+            "date_time": "2024-10-27T20:00:00",
+            "artist": "Modest Mouse",
+            "location": "1349 Kapiolani Blvd 3rd FloorHonolulu,HI 96814"
+        }
+    },
+    {
+        "id": "165",
+        "type": "event",
+        "attributes": {
+            "venue_name": "Paramount Theatre",
+            "event_name": "Modest Mouse",
+            "date_time": "2024-10-28T20:00:00",
+            "artist": "Modest Mouse: Good News For People Who Love Bad News Anniversary Tour",
+            "location": "911 Pine St Seattle,WA 98101"
+        }
+    },
+    {
+        "id": "166",
+        "type": "event",
+        "attributes": {
+            "venue_name": "Paramount Theatre",
+            "event_name": "Modest Mouse",
+            "date_time": "2024-10-28T20:00:00",
+            "artist": "Modest Mouse: Good News For People Who Love Bad News Anniversary Tour",
+            "location": "911 Pine St Seattle,WA 98101"
+        }
+    }
+]}
